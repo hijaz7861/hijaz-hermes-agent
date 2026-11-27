@@ -1,6 +1,6 @@
 # HIJAZ Hermes Agent Skills
 
-[![Skills](https://img.shields.io/badge/skills-27-brightgreen)](SKILLS.md)
+[![Skills](https://img.shields.io/badge/skills-37-brightgreen)](SKILLS.md)
 [![Playbooks](https://img.shields.io/badge/playbooks-8-blue)](playbooks/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-compatible-purple)](https://github.com/hijaz/hermes)
@@ -84,6 +84,26 @@ hermes run skill-creator --goal "Create skill for our API contract testing"
 | [`security-review`](skills/security-review/SKILL.md) | Security Engineering | ⭐⭐⭐ | Security-focused multi-agent review — adversarial review with security audit scan, severity classification |
 | [`workflow-benchmarking`](skills/workflow-benchmarking/SKILL.md) | Multi-Agent Orchestration | ⭐⭐ | Benchmark multi-skill workflows — compare configurations, measure performance, identify bottlenecks |
 | [`agentic-routing`](skills/agentic-routing/SKILL.md) | Multi-Agent Orchestration | ⭐⭐⭐⭐ | Autonomous execution with model routing — each subtask routed to optimal model by task/privacy/cost |
+| [`test-coverage-analyzer`](skills/test-coverage-analyzer/SKILL.md) | Testing & Quality Assurance | ⭐⭐ | Analyze coverage gaps, recommend targeted tests, verify improvement |
+| [`security-debugger`](skills/security-debugger/SKILL.md) | Security Engineering | ⭐⭐ | Debug security defects — reproduce, find root cause, fix with regression tests |
+| [`quality-gate-review`](skills/quality-gate-review/SKILL.md) | Security Engineering | ⭐⭐⭐ | Gated code review — independent review + test validation before approval |
+| [`workflow-optimizer`](skills/workflow-optimizer/SKILL.md) | Performance Optimization | ⭐⭐ | Optimize multi-skill workflows — measure performance, identify bottlenecks |
+| [`autonomous-refactoring-planner`](skills/autonomous-refactoring-planner/SKILL.md) | Software Engineering | ⭐⭐⭐⭐ | Autonomous refactoring planning and execution with self-correction |
+| [`api-contract-tester`](skills/api-contract-tester/SKILL.md) | Testing & Quality Assurance | ⭐⭐ | Validate API contracts — detect breaking changes, schema mismatches |
+| [`incident-responder`](skills/incident-responder/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Incident response — reproduce, correlate observability, fix, monitor |
+| [`compliance-auditor`](skills/compliance-auditor/SKILL.md) | Security Engineering | ⭐⭐ | Compliance audit — GDPR, SOC2, HIPAA, PCI-DSS requirements |
+| [`database-query-optimizer`](skills/database-query-optimizer/SKILL.md) | Performance Optimization | ⭐⭐ | Optimize database queries — slow queries, N+1, missing indexes |
+| [`configuration-validator`](skills/configuration-validator/SKILL.md) | Security Engineering | ⭐⭐ | Validate configuration — secrets, insecure defaults, drift |
+| [`api-version-manager`](skills/api-version-manager/SKILL.md) | Documentation | ⭐⭐ | API version management — versions, deprecation, migration guides |
+| [`error-budget-tracker`](skills/error-budget-tracker/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Error budget tracking — SLO compliance, budget consumption, alerts |
+| [`database-schema-linter`](skills/database-schema-linter/SKILL.md) | Performance Optimization | ⭐⭐ | Schema linting — missing indexes, constraints, unsafe types |
+| [`chaos-engineer`](skills/chaos-engineer/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Chaos engineering — failure injection, resilience verification |
+| [`secret-scanner-historical`](skills/secret-scanner-historical/SKILL.md) | Security Engineering | ⭐⭐ | Historical secret scanning — git history, leaked credentials |
+| [`production-safety-engine`](skills/production-safety-engine/SKILL.md) | DevOps & Infrastructure | ⭐⭐⭐⭐ | Production safety — incident response, error budgets, chaos, secure release |
+| [`api-governance-platform`](skills/api-governance-platform/SKILL.md) | Security Engineering | ⭐⭐⭐⭐ | API governance — contract testing, version management, security review, quality gate |
+| [`database-reliability-engine`](skills/database-reliability-engine/SKILL.md) | Performance Optimization | ⭐⭐⭐⭐ | Database reliability — query optimization, schema linting, coverage analysis |
+| [`security-operations-center`](skills/security-operations-center/SKILL.md) | Security Engineering | ⭐⭐⭐⭐ | Security operations — secret scanning, debugging, compliance, review, dependencies |
+| [`developer-experience-platform`](skills/developer-experience-platform/SKILL.md) | Software Engineering | ⭐⭐⭐⭐ | Developer experience — coverage analysis, verified refactoring, documentation |
 
 ---
 
@@ -323,6 +343,34 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
 │   ├── observability-instrumenter.md
 │   ├── skill-benchmarker.md
 │   └── secure-release.md
+│   ├── security-dependency-audit.md
+│   ├── performance-optimization.md
+│   ├── architecture-documentation.md
+│   ├── performance-observability.md
+│   ├── debug-performance.md
+│   ├── refactor-with-verification.md
+│   ├── security-review.md
+│   └── workflow-benchmarking.md
+│   ├── test-coverage-analyzer.md
+│   ├── security-debugger.md
+│   ├── quality-gate-review.md
+│   ├── workflow-optimizer.md
+│   ├── autonomous-refactoring-planner.md
+│   ├── api-contract-tester.md
+│   ├── incident-responder.md
+│   ├── compliance-auditor.md
+│   ├── database-query-optimizer.md
+│   ├── configuration-validator.md
+│   ├── api-version-manager.md
+│   ├── error-budget-tracker.md
+│   ├── database-schema-linter.md
+│   ├── chaos-engineer.md
+│   ├── secret-scanner-historical.md
+│   ├── production-safety-engine.md
+│   ├── api-governance-platform.md
+│   ├── database-reliability-engine.md
+│   ├── security-operations-center.md
+│   └── developer-experience-platform.md
 └── skills/                      # Skill definitions
     ├── codebase-intelligence/
     ├── autonomous-debugging/
@@ -350,6 +398,26 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
     ├── refactor-with-verification/
     └── security-review/
     └── workflow-benchmarking/
+    ├── test-coverage-analyzer/
+    ├── security-debugger/
+    ├── quality-gate-review/
+    ├── workflow-optimizer/
+    ├── autonomous-refactoring-planner/
+    ├── api-contract-tester/
+    ├── incident-responder/
+    ├── compliance-auditor/
+    ├── database-query-optimizer/
+    ├── configuration-validator/
+    ├── api-version-manager/
+    ├── error-budget-tracker/
+    ├── database-schema-linter/
+    ├── chaos-engineer/
+    ├── secret-scanner-historical/
+    ├── production-safety-engine/
+    ├── api-governance-platform/
+    ├── database-reliability-engine/
+    ├── security-operations-center/
+    └── developer-experience-platform/
 ```
 
 ---

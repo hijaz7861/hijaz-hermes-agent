@@ -81,3 +81,73 @@ Following the framework's Skill Combination & Innovation Engine:
 DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
 
 Current phase: COMPLETE (v2.0.0 — all 27 skills registered, playbooks created, registry updated)
+
+## v3.0.0 — 2026-11-27: Skill Expansion & Gap Filling
+
+### New Skills Created (15)
+
+| Skill | Combines | Category | Purpose | Dependencies |
+|-------|----------|----------|---------|--------------|
+| `test-coverage-analyzer` | codebase-intelligence + autonomous-testing | Testing & QA | Analyze coverage gaps, recommend tests, verify improvement | `codebase-intelligence`, `autonomous-testing` |
+| `security-debugger` | autonomous-debugging + security-audit | Security Engineering | Debug security defects — reproduce, find root cause, fix | `autonomous-debugging`, `security-audit` |
+| `quality-gate-review` | multi-agent-review + autonomous-testing | Security Engineering | Gated code review — review + test validation before approval | `multi-agent-review`, `autonomous-testing` |
+| `workflow-optimizer` | workflow-orchestrator + skill-benchmarker | Performance Optimization | Optimize workflows — measure performance, identify bottlenecks | `workflow-orchestrator`, `skill-benchmarker` |
+| `autonomous-refactoring-planner` | agentic-workflow-engine + codebase-intelligence | Software Engineering | Autonomous refactoring planning and execution | `agentic-workflow-engine`, `codebase-intelligence` |
+| `api-contract-tester` | codebase-intelligence + autonomous-testing | Testing & QA | Validate API contracts — detect breaking changes, schema mismatches | `codebase-intelligence`, `autonomous-testing` |
+| `incident-responder` | autonomous-debugging + observability-instrumenter | DevOps & Infrastructure | Incident response — reproduce, correlate, fix, monitor | `autonomous-debugging`, `observability-instrumenter` |
+| `compliance-auditor` | security-audit + documentation-synthesizer | Security Engineering | Compliance audit — GDPR, SOC2, HIPAA, PCI-DSS | `security-audit`, `documentation-synthesizer` |
+| `database-query-optimizer` | performance-profiler + code-refactorer | Performance Optimization | Optimize database queries — slow queries, N+1, indexes | `performance-profiler`, `code-refactorer` |
+| `configuration-validator` | codebase-intelligence + security-audit | Security Engineering | Validate configuration — secrets, insecure defaults, drift | `codebase-intelligence`, `security-audit` |
+| `api-version-manager` | codebase-intelligence + documentation-synthesizer | Documentation | API version management — versions, deprecation, migration | `codebase-intelligence`, `documentation-synthesizer` |
+| `error-budget-tracker` | autonomous-testing + observability-instrumenter | DevOps & Infrastructure | Error budget tracking — SLO compliance, budget consumption | `autonomous-testing`, `observability-instrumenter` |
+| `database-schema-linter` | codebase-intelligence + security-audit | Performance Optimization | Schema linting — missing indexes, constraints, unsafe types | `codebase-intelligence`, `security-audit` |
+| `chaos-engineer` | performance-profiler + incident-responder | DevOps & Infrastructure | Chaos engineering — failure injection, resilience verification | `performance-profiler`, `incident-responder` |
+| `secret-scanner-historical` | security-audit + codebase-intelligence | Security Engineering | Historical secret scanning — git history, leaked credentials | `security-audit`, `codebase-intelligence` |
+
+### Registry Infrastructure Updated
+
+- `skills/registry/skills-index.json` — Updated to v3.0.0, 32 total skills
+- `skills/registry/skill-dependencies.json` — Updated dependency graph with all new skills
+- `skills/registry/evaluation-history.json` — Template preserved
+- `skills/registry/evolution-log.md` — This file
+
+### Evolution Cycle State
+
+DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
+
+Current phase: COMPLETE (v3.0.0 — all 32 skills registered, playbooks created, registry updated)
+
+## v4.0.0 — 2026-11-27: Composite Integrated Skills
+
+### New Composite Skills Created (5)
+
+Each skill combines 3+ existing capabilities (A + B + C + ... = New Skill) to produce integrated engineering capabilities:
+
+| Skill | Combines | Category | Purpose | Dependencies |
+|-------|----------|----------|---------|--------------|
+| `production-safety-engine` | incident-responder + error-budget-tracker + chaos-engineer + secure-release | DevOps & Infrastructure | Production safety — incident response, error budgets, chaos, secure release | 4 skills |
+| `api-governance-platform` | api-contract-tester + api-version-manager + security-review + quality-gate-review | Security Engineering | API governance — contract, versioning, security review, quality gate | 4 skills |
+| `database-reliability-engine` | database-query-optimizer + database-schema-linter + test-coverage-analyzer | Performance Optimization | Database reliability — query optimization, schema linting, coverage | 3 skills |
+| `security-operations-center` | secret-scanner-historical + security-debugger + compliance-auditor + security-review + security-dependency-audit | Security Engineering | Security operations — secrets, debugging, compliance, review, dependencies | 5 skills |
+| `developer-experience-platform` | test-coverage-analyzer + refactor-with-verification + architecture-documentation + code-refactorer | Software Engineering | Developer experience — coverage, verified refactoring, documentation | 4 skills |
+
+### Registry Infrastructure Updated
+
+- `skills/registry/skills-index.json` — Updated to v4.0.0, 37 total skills with combination metadata
+- `skills/registry/skill-dependencies.json` — Updated dependency graph with all composite skills
+- `skills/registry/evaluation-history.json` — Template preserved for comparative evaluation records
+- `skills/registry/evolution-log.md` — This file
+
+### Combination Strategy Applied
+
+Following the framework's Skill Combination & Innovation Engine:
+- **Skill A + Skill B + Skill C + ... = New Composite Skill**: Each combination demonstrates a distinct, reusable integrated capability
+- **No meaningless combinations**: Every combination solves a real gap not covered by individual skills alone
+- **Playbooks created**: 3 scenarios each (normal, failure, safety) for all 5 composite skills
+- **Registry updated**: skills-index.json, skill-dependencies.json, SKILLS.md, README.md
+
+### Evolution Cycle State
+
+DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
+
+Current phase: COMPLETE (v4.0.0 — all 37 skills registered, playbooks created, registry updated, ready for GitHub push)

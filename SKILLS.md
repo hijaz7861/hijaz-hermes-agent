@@ -35,6 +35,26 @@ Central index of all available skills with metadata for discovery, routing, and 
 | `security-review` | Security Engineering | High | Security-focused multi-agent review — adversarial review with security audit scan, severity classification | `multi-agent-review`, `security-audit` |
 | `workflow-benchmarking` | Multi-Agent Orchestration | Medium | Benchmark multi-skill workflows — compare configurations, measure performance, identify bottlenecks | `workflow-orchestrator`, `skill-benchmarker` |
 | `agentic-routing` | Multi-Agent Orchestration | Very High | Autonomous execution with model routing — each subtask routed to optimal model by task/privacy/cost | `agentic-workflow-engine`, `model-router` |
+| `test-coverage-analyzer` | Testing & Quality Assurance | Medium | Analyze coverage gaps, recommend targeted tests, verify improvement | `codebase-intelligence`, `autonomous-testing` |
+| `security-debugger` | Security Engineering | Medium | Debug security defects — reproduce, find root cause, fix with regression tests | `autonomous-debugging`, `security-audit` |
+| `quality-gate-review` | Security Engineering | High | Gated code review — independent review + test validation before approval | `multi-agent-review`, `autonomous-testing` |
+| `workflow-optimizer` | Performance Optimization | Medium | Optimize multi-skill workflows — measure performance, identify bottlenecks | `workflow-orchestrator`, `skill-benchmarker` |
+| `autonomous-refactoring-planner` | Software Engineering | Very High | Autonomous refactoring planning and execution with self-correction | `agentic-workflow-engine`, `codebase-intelligence` |
+| `api-contract-tester` | Testing & Quality Assurance | Medium | Validate API contracts — detect breaking changes, schema mismatches | `codebase-intelligence`, `autonomous-testing` |
+| `incident-responder` | DevOps & Infrastructure | Medium | Incident response — reproduce, correlate observability, fix, monitor | `autonomous-debugging`, `observability-instrumenter` |
+| `compliance-auditor` | Security Engineering | Medium | Compliance audit — GDPR, SOC2, HIPAA, PCI-DSS requirements | `security-audit`, `documentation-synthesizer` |
+| `database-query-optimizer` | Performance Optimization | Medium | Optimize database queries — slow queries, N+1, missing indexes | `performance-profiler`, `code-refactorer` |
+| `configuration-validator` | Security Engineering | Medium | Validate configuration — secrets, insecure defaults, drift | `codebase-intelligence`, `security-audit` |
+| `api-version-manager` | Documentation | Medium | API version management — versions, deprecation, migration guides | `codebase-intelligence`, `documentation-synthesizer` |
+| `error-budget-tracker` | DevOps & Infrastructure | Medium | Error budget tracking — SLO compliance, budget consumption, alerts | `autonomous-testing`, `observability-instrumenter` |
+| `database-schema-linter` | Performance Optimization | Medium | Schema linting — missing indexes, constraints, unsafe types | `codebase-intelligence`, `security-audit` |
+| `chaos-engineer` | DevOps & Infrastructure | Medium | Chaos engineering — failure injection, resilience verification | `performance-profiler`, `incident-responder` |
+| `secret-scanner-historical` | Security Engineering | Medium | Historical secret scanning — git history, leaked credentials | `security-audit`, `codebase-intelligence` |
+| `production-safety-engine` | DevOps & Infrastructure | Very High | Production safety — incident response, error budgets, chaos, secure release | `incident-responder`, `error-budget-tracker`, `chaos-engineer`, `secure-release` |
+| `api-governance-platform` | Security Engineering | Very High | API governance — contract testing, version management, security review, quality gate | `api-contract-tester`, `api-version-manager`, `security-review`, `quality-gate-review` |
+| `database-reliability-engine` | Performance Optimization | Very High | Database reliability — query optimization, schema linting, coverage analysis | `database-query-optimizer`, `database-schema-linter`, `test-coverage-analyzer` |
+| `security-operations-center` | Security Engineering | Very High | Security operations — secret scanning, debugging, compliance, review, dependencies | `secret-scanner-historical`, `security-debugger`, `compliance-auditor`, `security-review`, `security-dependency-audit` |
+| `developer-experience-platform` | Software Engineering | Very High | Developer experience — coverage analysis, verified refactoring, documentation | `test-coverage-analyzer`, `refactor-with-verification`, `architecture-documentation`, `code-refactorer` |
 
 ---
 
@@ -389,6 +409,188 @@ Output: GoalSpec, execution plan, routing decisions per subtask, execution resul
 Time: Variable (minutes to hours)
 Features: Agentic execution + model routing, per-subtask model selection, privacy gates, budget limits, self-correction
 ```
+
+### test-coverage-analyzer
+```
+Trigger: "Analyze test coverage gaps in module X" / "Find untested code paths"
+Input: Target code, coverage threshold, existing coverage data
+Output: Coverage gap report, risk-classified gaps, test recommendations
+Time: 5-15 min
+Features: Codebase mapping + coverage analysis, risk classification, prioritized recommendations
+```
+
+### security-debugger
+```
+Trigger: "Debug SQL injection in endpoint X" / "Find auth bypass vulnerability"
+Input: Security issue, reproduction steps, environment, acceptable target
+Output: Reproduction evidence, root cause, fix, regression test, verification
+Time: 10-30 min
+Features: Debugging + security audit, root-cause analysis, regression benchmark, no secret logging
+```
+
+### quality-gate-review
+```
+Trigger: "Review PR #X with quality gate — tests must pass"
+Input: Change diff/PR, acceptance criteria, test requirements, gate threshold
+Output: Review findings, test evidence, gate decision (PASS/FAIL/BLOCKED)
+Time: 10-60 min
+Features: Multi-agent review + test validation, mandatory gate, cross-reference findings
+```
+
+### workflow-optimizer
+```
+Trigger: "Optimize this workflow for speed" / "Find bottlenecks in workflow X"
+Input: Workflow definitions, scenario, performance target, repetitions
+Output: Baseline profile, bottleneck analysis, optimized config, before/after results
+Time: 10-30 min
+Features: Workflow execution + benchmarking, bottleneck identification, statistical significance
+```
+
+### autonomous-refactoring-planner
+```
+Trigger: "Autonomously refactor module X" / "Plan and execute refactoring"
+Input: Refactoring goal, constraints, behavior contract, quality thresholds
+Output: GoalSpec, execution plan, routing decisions, execution result, lessons learned
+Time: Variable (minutes to hours)
+Features: Agentic planning + codebase mapping, per-subtask routing, self-correction, quality gates
+```
+
+### api-contract-tester
+```
+Trigger: "Validate API contracts for endpoint X" / "Check for breaking API changes"
+Input: Contract spec (OpenAPI/GraphQL), target API, codebase, breaking change threshold
+Output: Contract compliance report, breaking changes, schema mismatches, test results
+Time: 5-20 min
+Features: Codebase mapping + contract validation, breaking change detection, staging-only testing
+```
+
+### incident-responder
+```
+Trigger: "Respond to production incident #X" / "Debug the outage in service Y"
+Input: Incident details, observability data, environment, rollback plan
+Output: Incident timeline, root cause, fix, monitoring added, verification
+Time: 15-60 min
+Features: Debugging + observability, log/metric/trace correlation, monitoring for prevention
+```
+
+### compliance-auditor
+```
+Trigger: "Audit for GDPR compliance" / "Check SOC2 requirements for service X"
+Input: Compliance framework, target code/config, data classification, existing docs
+Output: Compliance gap report, data inventory, remediation plan, documentation
+Time: 10-30 min
+Features: Security audit + documentation synthesis, requirement mapping, gap classification
+```
+
+### database-query-optimizer
+```
+Trigger: "Optimize slow database queries in module X" / "Find N+1 query patterns"
+Input: Target queries, database type, workload, performance target
+Output: Query performance report, optimization recommendations, before/after benchmarks
+Time: 10-30 min
+Features: Profiling + refactoring, EXPLAIN ANALYZE verification, data integrity gate
+```
+
+### configuration-validator
+```
+Trigger: "Validate application configuration" / "Find hardcoded secrets in config"
+Input: Config files, environment variables, code readers, environments
+Output: Validation report, secret locations (redacted), drift analysis, remediation plan
+Time: 5-15 min
+Features: Codebase mapping + security audit, secret detection, environment drift detection
+```
+
+### api-version-manager
+```
+Trigger: "Manage API versioning for service X" / "Deprecate API v1 and migrate clients"
+Input: API versions, deprecation policy, client usage data, breaking change definition
+Output: Version inventory, breaking changes, deprecation timeline, migration guide
+Time: 10-30 min
+Features: Codebase mapping + documentation synthesis, version diffing, client compliance
+```
+
+### error-budget-tracker
+```
+Trigger: "Track error budget for service X" / "Monitor SLO compliance for API Y"
+Input: SLO targets, time window, observability data, test results
+Output: SLO compliance report, budget status, error rate trends, alert recommendations
+Time: 5-15 min
+Features: Testing + observability, SLO definition, budget calculation, alert thresholds
+```
+
+### database-schema-linter
+```
+Trigger: "Lint the database schema for service X" / "Check for missing indexes"
+Input: Schema files, database type, naming conventions, security requirements
+Output: Schema lint report, missing indexes/constraints, unsafe types, naming violations
+Time: 5-15 min
+Features: Codebase mapping + security audit, structural linting, security audit
+```
+
+### chaos-engineer
+```
+Trigger: "Run chaos experiment on service X" / "Test resilience under failure"
+Input: Target, failure type, blast radius, safety thresholds, rollback plan
+Output: Experiment hypothesis, results, resilience assessment, monitoring verification
+Time: 15-60 min
+Features: Profiling + incident response, failure injection, safety thresholds, auto-abort
+```
+
+### secret-scanner-historical
+```
+Trigger: "Scan git history for committed secrets" / "Find leaked credentials in history"
+Input: Repository, scan depth, secret patterns, exclusions
+Output: Secret findings report, exposure assessment, remediation recommendations
+Time: 10-30 min
+Features: Security audit + codebase mapping, commit history scanning, no secret output
+```
+
+### production-safety-engine
+```
+Trigger: "Ensure production safety for service X" / "Set up reliability monitoring"
+Input: Services, SLO targets, observability data, release pipeline, safety thresholds
+Output: Safety dashboard, incident response, chaos results, release report, improvement loop
+Time: Variable (minutes to hours)
+Features: 4-skill integration, SLO monitoring + chaos + incident response + secure release
+```
+
+### api-governance-platform
+```
+Trigger: "Establish API governance for service X" / "Validate API before release"
+Input: API contract, versions, security requirements, quality gate criteria, deprecation policy
+Output: Governance report: contract, version, security, quality, final go/no-go
+Time: Variable (minutes to hours)
+Features: 4-skill integration, contract testing + versioning + security review + quality gate
+```
+
+### database-reliability-engine
+```
+Trigger: "Ensure database reliability for service X" / "Database health check"
+Input: Database, schema files, query files, test files, workload, performance target
+Output: Reliability report: query perf, schema lint, coverage gaps, remediation plan
+Time: Variable (minutes to hours)
+Features: 3-skill integration, query optimization + schema linting + coverage analysis
+```
+
+### security-operations-center
+```
+Trigger: "Establish security operations for repository X" / "Full security assessment"
+Input: Repository, compliance frameworks, dependency manifests, change scope, security policy
+Output: Security ops report: secrets, vulnerabilities, compliance, review, dependencies
+Time: Variable (minutes to hours)
+Features: 5-skill integration, secret scanning + debugging + compliance + review + dependencies
+```
+
+### developer-experience-platform
+```
+Trigger: "Improve developer experience for module X" / "DX improvement"
+Input: Target code, coverage threshold, refactoring goals, documentation format, quality thresholds
+Output: DX report: coverage gaps, refactoring results, documentation, maintainability metrics
+Time: Variable (minutes to hours)
+Features: 4-skill integration, coverage analysis + verified refactoring + documentation
+```
+
+---
 
 ---
 

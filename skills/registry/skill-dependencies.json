@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.0.0",
+  "registry_version": "4.0.0",
   "generated_at": "2026-11-27",
   "description": "Skill dependency graph. Each skill lists its direct dependencies and reverse dependents. Combination skills are marked with combination_of.",
   "dependencies": {
@@ -15,20 +15,26 @@
         "code-refactorer",
         "documentation-synthesizer",
         "observability-instrumenter",
-        "architecture-documentation"
+        "architecture-documentation",
+        "test-coverage-analyzer",
+        "autonomous-refactoring-planner",
+        "api-contract-tester",
+        "database-schema-linter",
+        "secret-scanner-historical",
+        "developer-experience-platform"
       ]
     },
     "autonomous-debugging": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["code-refactorer", "debug-performance"]
+      "reverse_dependents": ["code-refactorer", "debug-performance", "security-debugger", "incident-responder"]
     },
     "autonomous-testing": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["code-refactorer", "refactor-with-verification"]
+      "reverse_dependents": ["code-refactorer", "refactor-with-verification", "test-coverage-analyzer", "quality-gate-review", "error-budget-tracker", "database-reliability-engine", "developer-experience-platform"]
     },
     "multi-agent-review": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["security-review"]
+      "reverse_dependents": ["security-review", "quality-gate-review"]
     },
     "model-router": {
       "depends_on": [],
@@ -40,7 +46,7 @@
     },
     "workflow-orchestrator": {
       "depends_on": ["all"],
-      "reverse_dependents": ["workflow-benchmarking"]
+      "reverse_dependents": ["workflow-benchmarking", "workflow-optimizer"]
     },
     "advanced-model-router": {
       "depends_on": ["model-router"],
@@ -48,11 +54,11 @@
     },
     "agentic-workflow-engine": {
       "depends_on": ["all", "vector_memory"],
-      "reverse_dependents": ["agentic-routing"]
+      "reverse_dependents": ["agentic-routing", "autonomous-refactoring-planner"]
     },
     "security-audit": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["security-dependency-audit", "secure-release", "security-review"]
+      "reverse_dependents": ["security-dependency-audit", "secure-release", "security-review", "security-debugger", "database-schema-linter", "compliance-auditor", "security-operations-center"]
     },
     "dependency-management": {
       "depends_on": ["codebase-intelligence"],
@@ -60,27 +66,27 @@
     },
     "release-coordinator": {
       "depends_on": ["all"],
-      "reverse_dependents": ["secure-release"]
+      "reverse_dependents": ["secure-release", "production-safety-engine"]
     },
     "performance-profiler": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["performance-optimization", "performance-observability", "debug-performance"]
+      "reverse_dependents": ["performance-optimization", "performance-observability", "debug-performance", "chaos-engineer", "database-query-optimizer", "database-reliability-engine"]
     },
     "code-refactorer": {
       "depends_on": ["codebase-intelligence", "autonomous-testing"],
-      "reverse_dependents": ["performance-optimization", "refactor-with-verification"]
+      "reverse_dependents": ["performance-optimization", "refactor-with-verification", "database-query-optimizer", "developer-experience-platform"]
     },
     "documentation-synthesizer": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["architecture-documentation"]
+      "reverse_dependents": ["architecture-documentation", "api-version-manager", "developer-experience-platform"]
     },
     "observability-instrumenter": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["performance-observability"]
+      "reverse_dependents": ["performance-observability", "incident-responder", "error-budget-tracker"]
     },
     "skill-benchmarker": {
       "depends_on": ["skill-creator"],
-      "reverse_dependents": ["workflow-benchmarking"]
+      "reverse_dependents": ["workflow-benchmarking", "workflow-optimizer"]
     },
     "security-dependency-audit": {
       "depends_on": ["security-audit", "dependency-management"],
@@ -104,7 +110,7 @@
     },
     "secure-release": {
       "depends_on": ["release-coordinator", "security-audit"],
-      "reverse_dependents": [],
+      "reverse_dependents": ["production-safety-engine"],
       "combination_of": ["release-coordinator", "security-audit"]
     },
     "debug-performance": {
@@ -131,14 +137,114 @@
       "depends_on": ["agentic-workflow-engine", "model-router"],
       "reverse_dependents": [],
       "combination_of": ["agentic-workflow-engine", "model-router"]
+    },
+    "test-coverage-analyzer": {
+      "depends_on": ["codebase-intelligence", "autonomous-testing"],
+      "reverse_dependents": [],
+      "combination_of": ["codebase-intelligence", "autonomous-testing"]
+    },
+    "security-debugger": {
+      "depends_on": ["autonomous-debugging", "security-audit"],
+      "reverse_dependents": [],
+      "combination_of": ["autonomous-debugging", "security-audit"]
+    },
+    "quality-gate-review": {
+      "depends_on": ["multi-agent-review", "autonomous-testing"],
+      "reverse_dependents": [],
+      "combination_of": ["multi-agent-review", "autonomous-testing"]
+    },
+    "workflow-optimizer": {
+      "depends_on": ["workflow-orchestrator", "skill-benchmarker"],
+      "reverse_dependents": [],
+      "combination_of": ["workflow-orchestrator", "skill-benchmarker"]
+    },
+    "autonomous-refactoring-planner": {
+      "depends_on": ["agentic-workflow-engine", "codebase-intelligence"],
+      "reverse_dependents": [],
+      "combination_of": ["agentic-workflow-engine", "codebase-intelligence"]
+    },
+    "api-contract-tester": {
+      "depends_on": ["codebase-intelligence", "autonomous-testing"],
+      "reverse_dependents": ["api-governance-platform"],
+      "combination_of": ["codebase-intelligence", "autonomous-testing"]
+    },
+    "incident-responder": {
+      "depends_on": ["autonomous-debugging", "observability-instrumenter"],
+      "reverse_dependents": ["production-safety-engine"],
+      "combination_of": ["autonomous-debugging", "observability-instrumenter"]
+    },
+    "compliance-auditor": {
+      "depends_on": ["security-audit", "documentation-synthesizer"],
+      "reverse_dependents": ["security-operations-center"],
+      "combination_of": ["security-audit", "documentation-synthesizer"]
+    },
+    "database-query-optimizer": {
+      "depends_on": ["performance-profiler", "code-refactorer"],
+      "reverse_dependents": ["database-reliability-engine"],
+      "combination_of": ["performance-profiler", "code-refactorer"]
+    },
+    "configuration-validator": {
+      "depends_on": ["codebase-intelligence", "security-audit"],
+      "reverse_dependents": [],
+      "combination_of": ["codebase-intelligence", "security-audit"]
+    },
+    "api-version-manager": {
+      "depends_on": ["codebase-intelligence", "documentation-synthesizer"],
+      "reverse_dependents": ["api-governance-platform"],
+      "combination_of": ["codebase-intelligence", "documentation-synthesizer"]
+    },
+    "error-budget-tracker": {
+      "depends_on": ["autonomous-testing", "observability-instrumenter"],
+      "reverse_dependents": ["production-safety-engine"],
+      "combination_of": ["autonomous-testing", "observability-instrumenter"]
+    },
+    "database-schema-linter": {
+      "depends_on": ["codebase-intelligence", "security-audit"],
+      "reverse_dependents": ["database-reliability-engine"],
+      "combination_of": ["codebase-intelligence", "security-audit"]
+    },
+    "chaos-engineer": {
+      "depends_on": ["performance-profiler", "incident-responder"],
+      "reverse_dependents": ["production-safety-engine"],
+      "combination_of": ["performance-profiler", "incident-responder"]
+    },
+    "secret-scanner-historical": {
+      "depends_on": ["security-audit", "codebase-intelligence"],
+      "reverse_dependents": ["security-operations-center"],
+      "combination_of": ["security-audit", "codebase-intelligence"]
+    },
+    "production-safety-engine": {
+      "depends_on": ["incident-responder", "error-budget-tracker", "chaos-engineer", "secure-release"],
+      "reverse_dependents": [],
+      "combination_of": ["incident-responder", "error-budget-tracker", "chaos-engineer", "secure-release"]
+    },
+    "api-governance-platform": {
+      "depends_on": ["api-contract-tester", "api-version-manager", "security-review", "quality-gate-review"],
+      "reverse_dependents": [],
+      "combination_of": ["api-contract-tester", "api-version-manager", "security-review", "quality-gate-review"]
+    },
+    "database-reliability-engine": {
+      "depends_on": ["database-query-optimizer", "database-schema-linter", "test-coverage-analyzer"],
+      "reverse_dependents": [],
+      "combination_of": ["database-query-optimizer", "database-schema-linter", "test-coverage-analyzer"]
+    },
+    "security-operations-center": {
+      "depends_on": ["secret-scanner-historical", "security-debugger", "compliance-auditor", "security-review", "security-dependency-audit"],
+      "reverse_dependents": [],
+      "combination_of": ["secret-scanner-historical", "security-debugger", "compliance-auditor", "security-review", "security-dependency-audit"]
+    },
+    "developer-experience-platform": {
+      "depends_on": ["test-coverage-analyzer", "refactor-with-verification", "architecture-documentation", "code-refactorer"],
+      "reverse_dependents": [],
+      "combination_of": ["test-coverage-analyzer", "refactor-with-verification", "architecture-documentation", "code-refactorer"]
     }
   },
   "dependency_statistics": {
     "no_dependencies": 4,
     "single_dependency": 8,
-    "multiple_dependencies": 11,
+    "multiple_dependencies": 21,
     "depends_on_all": 3,
     "root_skills": ["codebase-intelligence", "model-router", "skill-creator"],
-    "combination_skills": 10
+    "combination_skills": 20
   }
 }
