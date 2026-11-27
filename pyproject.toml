@@ -1,7 +1,7 @@
 [project]
-name = "hijaz-hermes-free-router"
+name = "hijaz-one-ai-free-router"
 version = "0.1.0"
-description = "Strict free-only OpenRouter failover adapter for HIJAZ Hermes"
+description = "Strict free-only OpenRouter routing prototype for HIJAZ ONE AI Agent"
 requires-python = ">=3.10"
 dependencies = []
 
