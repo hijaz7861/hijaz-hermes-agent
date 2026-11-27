@@ -1,14 +1,20 @@
-# Upstream Hermes Runtime Integration Map
+# HIJAZ ONE AI Agent — Upstream Runtime Integration Map
 
 ## Why this document exists
 
-The GitHub repository `hijaz7861/hijaz-hermes-agent` is currently a skills-and-playbooks package with an experimental Python router adapter. It is not a complete copy of the Hermes runtime.
+The GitHub repository `hijaz7861/hijaz-hermes-agent` currently contains a
+skills-and-playbooks package and an experimental Python router adapter. It is
+not a complete copy of the Hermes runtime.
 
-The runtime source of truth remains `NousResearch/hermes-agent`. The upstream repository was inspected at commit:
+The runtime foundation remains `NousResearch/hermes-agent`. The upstream
+repository was inspected at commit:
 
 `45e9584556a97f50a3cb6394a6e7f6afa97bb66a`
 
-Do not build parallel browser, MCP, provider-registry, or agent-loop implementations until the existing runtime interfaces have been tested.
+HIJAZ ONE AI Agent is the independent product identity; Hermes remains the
+adapted technical runtime foundation with its original licensing and attribution.
+Do not build parallel browser, MCP, provider-registry, or agent-loop
+implementations until the existing runtime interfaces have been tested.
 
 ## Verified upstream capabilities
 
@@ -30,24 +36,31 @@ Relevant upstream references:
 - `website/docs/developer-guide/agent-loop.md`
 - `hermes_cli/runtime_provider_custom.py`
 
-**Integration rule:** extend Hermes' native provider/model-selection path. Do not introduce a second independent HTTP client into the live agent loop unless the native extension points prove insufficient.
+**Integration rule:** extend Hermes' native provider/model-selection path. Do not
+introduce a second independent HTTP client into the live agent loop unless the
+native extension points prove insufficient.
 
 ### 2. Browser / computer environment
 
-Upstream Hermes already provides browser automation through `browser_exec`, with Chromium controlled through Chrome DevTools Protocol (CDP). Documented modes include:
+Upstream Hermes already provides browser automation through `browser_exec`,
+with Chromium controlled through Chrome DevTools Protocol (CDP). Documented modes include:
 
 - Local headless Chromium launched for a Hermes browser session.
 - Headed/visible browser mode where the host supports a display.
 - Supported cloud browser providers.
 - Connecting to an existing Chrome instance through CDP.
 
-Browser sessions can preserve tabs and cookies across calls within their session. A fresh throwaway profile is the default; authenticated profile use is a separate explicit configuration.
+Browser sessions can preserve tabs and cookies across calls within their
+session. A fresh throwaway profile is the default; authenticated profile use
+is a separate explicit configuration.
 
 Relevant upstream reference:
 
 - `website/docs/user-guide/features/browser.md`
 
-**Integration rule:** reuse Hermes' existing browser tool and session model. Do not install another browser automation stack before testing this path on the target device/host.
+**Integration rule:** reuse Hermes' existing browser tool and session model.
+Do not install another browser automation stack before testing this path on
+the target device/host.
 
 ### 3. MCP
 
@@ -57,17 +70,24 @@ Upstream includes an MCP server entry point:
 python -m agent.transports.hermes_tools_mcp_server
 ```
 
-The documented server exposes a curated set of Hermes tools over stdio MCP. Its current exposed list intentionally excludes some host-sensitive or agent-context-bound tools, including terminal/file operations and `browser_exec` in that specific Codex-facing transport.
+The documented server exposes a curated set of Hermes tools over stdio MCP.
+Its current exposed list intentionally excludes some host-sensitive or
+agent-context-bound tools, including terminal/file operations and
+`browser_exec` in that specific Codex-facing transport.
 
 Relevant upstream reference:
 
 - `agent/transports/hermes_tools_mcp_server.py`
 
-**Integration rule:** inventory the existing MCP transports and their tool allowlists before adding another MCP server. MCP is a tool protocol; it does not provide an LLM or grant access to a ChatGPT model.
+**Integration rule:** inventory the existing MCP transports and their tool
+allowlists before adding another MCP server. MCP is a tool protocol; it does
+not provide an LLM or grant access to a ChatGPT model.
 
 ### 4. ChatGPT browser conversation
 
-A browser session may be used to open ChatGPT after the account owner signs in. This is a UI-automation experiment, not a native Hermes provider and not a guaranteed machine-to-machine API.
+A browser session may be used to open ChatGPT after the account owner signs in.
+This is a UI-automation experiment, not a native Hermes provider and not a
+guaranteed machine-to-machine API.
 
 Requirements and constraints:
 
@@ -90,9 +110,12 @@ The experimental adapter in `runtime/openrouter_free.py` is intentionally strict
 5. Fail closed if no verified free candidate remains.
 6. Never silently fall back to a paid model.
 
-OpenRouter still requires an API key for API access, including zero-priced model calls. Free model access is subject to current provider availability and quotas.
+OpenRouter still requires an API key for API access, including zero-priced model
+calls. Free model access is subject to current provider availability and quotas.
 
-Hermes' `provider_routing.sort: price` can influence underlying provider selection, but price-sorted provider routing alone is not proof that a model is free. Keep the explicit zero-price gate.
+Hermes' `provider_routing.sort: price` can influence underlying provider
+selection, but price-sorted provider routing alone is not proof that a model
+is free. Keep the explicit zero-price gate.
 
 ## Integration sequence
 
@@ -118,14 +141,6 @@ Hermes' `provider_routing.sort: price` can influence underlying provider selecti
 
 ## Immediate next action
 
-On the user's Termux device, inspect the existing local checkout without installing or deleting anything:
-
-```bash
-cd ~/hijaz-hermes-agent || exit 1
-printf '\n=== REMOTES ===\n'; git remote -v
-printf '\n=== BRANCH / COMMIT ===\n'; git status --short; git branch --show-current; git log -1 --oneline
-printf '\n=== ROOT ===\n'; ls -la | head -60
-printf '\n=== RUNTIME VERSION ===\n'; hermes --version 2>&1 || true
-```
-
-The local checkout must be identified before any attempt to connect this skills repository to it or change its remotes.
+The local checkout must be identified before connecting this skills package to it
+or changing its Git remotes. The local Termux audit is separate from this GitHub
+repository and must not be treated as a clean or synchronized checkout.
