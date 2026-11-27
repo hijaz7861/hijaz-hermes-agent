@@ -1,6 +1,6 @@
 # HIJAZ Hermes Agent Skills
 
-[![Skills](https://img.shields.io/badge/skills-17-brightgreen)](SKILLS.md)
+[![Skills](https://img.shields.io/badge/skills-27-brightgreen)](SKILLS.md)
 [![Playbooks](https://img.shields.io/badge/playbooks-8-blue)](playbooks/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-compatible-purple)](https://github.com/hijaz/hermes)
@@ -74,6 +74,16 @@ hermes run skill-creator --goal "Create skill for our API contract testing"
 | [`documentation-synthesizer`](skills/documentation-synthesizer/SKILL.md) | Documentation | ⭐⭐ | Generate API docs, README sections, docstrings from code |
 | [`observability-instrumenter`](skills/observability-instrumenter/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Add structured logging, metrics, tracing, health checks |
 | [`skill-benchmarker`](skills/skill-benchmarker/SKILL.md) | AI Agent Development | ⭐⭐ | Evaluate and compare skill performance against baselines |
+| [`security-dependency-audit`](skills/security-dependency-audit/SKILL.md) | Security Engineering | ⭐⭐ | Dependency audit with security focus — vulnerable packages, CVEs, secure remediation |
+| [`performance-optimization`](skills/performance-optimization/SKILL.md) | Performance Optimization | ⭐⭐ | Profile bottlenecks then refactor hot paths — verified performance gains with benchmarks |
+| [`architecture-documentation`](skills/architecture-documentation/SKILL.md) | Documentation | ⭐⭐ | Architecture map + synthesized docs from code — API reference, module overviews, data flow |
+| [`performance-observability`](skills/performance-observability/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Instrument code + profile overhead — observability with measured performance impact |
+| [`secure-release`](skills/secure-release/SKILL.md) | Security Engineering | ⭐⭐⭐ | Release coordination with mandatory security audit gate — no release with unresolved CRITICAL/HIGH |
+| [`debug-performance`](skills/debug-performance/SKILL.md) | Debugging | ⭐⭐ | Debug performance defects — reproduce slowness, find root cause, fix with benchmark verification |
+| [`refactor-with-verification`](skills/refactor-with-verification/SKILL.md) | Software Engineering | ⭐⭐ | Refactor with test verification — characterization tests, behavior-preserving transforms, test gate |
+| [`security-review`](skills/security-review/SKILL.md) | Security Engineering | ⭐⭐⭐ | Security-focused multi-agent review — adversarial review with security audit scan, severity classification |
+| [`workflow-benchmarking`](skills/workflow-benchmarking/SKILL.md) | Multi-Agent Orchestration | ⭐⭐ | Benchmark multi-skill workflows — compare configurations, measure performance, identify bottlenecks |
+| [`agentic-routing`](skills/agentic-routing/SKILL.md) | Multi-Agent Orchestration | ⭐⭐⭐⭐ | Autonomous execution with model routing — each subtask routed to optimal model by task/privacy/cost |
 
 ---
 
@@ -311,7 +321,8 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
 │   ├── code-refactorer.md
 │   ├── documentation-synthesizer.md
 │   ├── observability-instrumenter.md
-│   └── skill-benchmarker.md
+│   ├── skill-benchmarker.md
+│   └── secure-release.md
 └── skills/                      # Skill definitions
     ├── codebase-intelligence/
     ├── autonomous-debugging/
@@ -329,7 +340,16 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
     ├── code-refactorer/
     ├── documentation-synthesizer/
     ├── observability-instrumenter/
-    └── skill-benchmarker/
+    ├── skill-benchmarker/
+    ├── security-dependency-audit/
+    ├── performance-optimization/
+    ├── architecture-documentation/
+    ├── performance-observability/
+    ├── secure-release/
+    ├── debug-performance/
+    ├── refactor-with-verification/
+    └── security-review/
+    └── workflow-benchmarking/
 ```
 
 ---

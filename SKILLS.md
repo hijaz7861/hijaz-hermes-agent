@@ -25,6 +25,16 @@ Central index of all available skills with metadata for discovery, routing, and 
 | `documentation-synthesizer` | Documentation | Medium | Generate API docs, README sections, docstrings from code | `codebase-intelligence` |
 | `observability-instrumenter` | DevOps & Infrastructure | Medium | Add structured logging, metrics, tracing, health checks | `codebase-intelligence` |
 | `skill-benchmarker` | AI Agent Development | Medium | Evaluate and compare skill performance against baselines | `skill-creator` |
+| `security-dependency-audit` | Security Engineering | Medium | Dependency audit with security focus — vulnerable packages, CVEs, secure remediation | `security-audit`, `dependency-management` |
+| `performance-optimization` | Performance Optimization | Medium | Profile bottlenecks then refactor hot paths — verified performance gains with benchmarks | `performance-profiler`, `code-refactorer` |
+| `architecture-documentation` | Documentation | Medium | Architecture map + synthesized docs from code — API reference, module overviews, data flow | `codebase-intelligence`, `documentation-synthesizer` |
+| `performance-observability` | DevOps & Infrastructure | Medium | Instrument code + profile overhead — observability with measured performance impact | `observability-instrumenter`, `performance-profiler` |
+| `secure-release` | Security Engineering | High | Release coordination with mandatory security audit gate — no release with unresolved CRITICAL/HIGH | `release-coordinator`, `security-audit` |
+| `debug-performance` | Debugging | Medium | Debug performance defects — reproduce slowness, find root cause, fix with benchmark verification | `autonomous-debugging`, `performance-profiler` |
+| `refactor-with-verification` | Software Engineering | Medium | Refactor with test verification — characterization tests, behavior-preserving transforms, test gate | `code-refactorer`, `autonomous-testing` |
+| `security-review` | Security Engineering | High | Security-focused multi-agent review — adversarial review with security audit scan, severity classification | `multi-agent-review`, `security-audit` |
+| `workflow-benchmarking` | Multi-Agent Orchestration | Medium | Benchmark multi-skill workflows — compare configurations, measure performance, identify bottlenecks | `workflow-orchestrator`, `skill-benchmarker` |
+| `agentic-routing` | Multi-Agent Orchestration | Very High | Autonomous execution with model routing — each subtask routed to optimal model by task/privacy/cost | `agentic-workflow-engine`, `model-router` |
 
 ---
 
@@ -288,6 +298,96 @@ Input: Target version, branch, release criteria
 Output: Release report, changelog, gate status (passed/failed/blocked)
 Time: Variable (minutes to hours)
 Features: Readiness checks, changelog assembly, approval-gated version bump, no deploy/publish
+```
+
+### security-dependency-audit
+```
+Trigger: "Audit dependencies for security vulnerabilities" / "Find vulnerable packages"
+Input: Dependency manifests/lockfiles, security advisory feeds, severity threshold
+Output: Vulnerable dependency report, CVE IDs, fix versions, prioritized remediation plan
+Time: 5-20 min
+Features: Dependency inventory + security scan, CVE/advisory IDs, severity ranking, approval-gated fixes
+```
+
+### performance-optimization
+```
+Trigger: "Optimize this code for performance" / "Profile and fix slow endpoint X"
+Input: Target code, workload, performance target, constraints
+Output: Baseline profile, bottleneck table, refactor plan, before/after benchmarks, verification
+Time: 10-30 min
+Features: Measurement-first profiling + behavior-preserving refactoring, test gate, rollback on regression
+```
+
+### architecture-documentation
+```
+Trigger: "Document this repository's architecture" / "Generate API docs from code"
+Input: Target repo/module, format, audience, existing docs
+Output: Architecture map, API reference, module overviews, coverage report, staleness report
+Time: 5-15 min
+Features: Code-as-source-of-truth, data flow mapping, real examples from tests, contradiction detection
+```
+
+### performance-observability
+```
+Trigger: "Instrument and profile service X" / "Add observability and measure overhead"
+Input: Target code, telemetry type, overhead budget, destination
+Output: Instrumentation diff, baseline/post profiles, overhead %, data-classification review
+Time: 5-15 min
+Features: Observability + profiling, overhead budget enforcement, no secret logging, data classification
+```
+
+### secure-release
+```
+Trigger: "Prepare secure release vX.Y.Z" / "Release with security audit gate"
+Input: Target version, branch, commit range, security policy
+Output: Release report, security findings, gate status, changelog, next steps
+Time: Variable (minutes to hours)
+Features: Release readiness + security audit, mandatory CRITICAL/HIGH gate, approval-gated version bump
+```
+
+### debug-performance
+```
+Trigger: "Debug why endpoint X is slow" / "Find performance regression in module Y"
+Input: Performance issue, reproduction steps, environment, acceptable target
+Output: Reproduction evidence, root cause, fix, regression test, before/after benchmarks
+Time: 10-30 min
+Features: Debugging + profiling, root-cause analysis, regression benchmark, rollback on failure
+```
+
+### refactor-with-verification
+```
+Trigger: "Refactor module X with full test verification" / "Extract method safely"
+Input: Target code, transformation type, scope, test coverage requirement
+Output: Refactor plan, characterization tests, diff, before/after test results, risk assessment
+Time: 5-15 min
+Features: Refactoring + test verification, behavior-preserving, test gate (pass before/after), rollback
+```
+
+### security-review
+```
+Trigger: "Security review this PR" / "Review auth module for security issues"
+Input: Change diff/PR, security requirements, severity threshold for blocking
+Output: Findings table, role reports, consolidated report, go/no-go decision
+Time: 10-60 min
+Features: Multi-agent review + security audit, adversarial review, severity classification, post-integration verification
+```
+
+### workflow-benchmarking
+```
+Trigger: "Benchmark this workflow configuration" / "Compare workflow A vs. workflow B"
+Input: Workflow definitions, scenario, metrics, repetitions
+Output: Evaluation report, comparison matrix, bottleneck analysis, adopt/reject/iterate decision
+Time: 10-30 min
+Features: Workflow execution + benchmarking, identical scenario comparison, statistical significance, bottleneck identification
+```
+
+### agentic-routing
+```
+Trigger: "Execute goal autonomously with optimal model routing" / "Agentic workflow with routing"
+Input: High-level goal, task types per subtask, privacy classification, budget/latency targets
+Output: GoalSpec, execution plan, routing decisions per subtask, execution result, audit trail
+Time: Variable (minutes to hours)
+Features: Agentic execution + model routing, per-subtask model selection, privacy gates, budget limits, self-correction
 ```
 
 ---

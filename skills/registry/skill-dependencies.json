@@ -1,7 +1,7 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "2.0.0",
   "generated_at": "2026-11-27",
-  "description": "Skill dependency graph. Each skill lists its direct dependencies and reverse dependents.",
+  "description": "Skill dependency graph. Each skill lists its direct dependencies and reverse dependents. Combination skills are marked with combination_of.",
   "dependencies": {
     "codebase-intelligence": {
       "depends_on": [],
@@ -14,24 +14,25 @@
         "performance-profiler",
         "code-refactorer",
         "documentation-synthesizer",
-        "observability-instrumenter"
+        "observability-instrumenter",
+        "architecture-documentation"
       ]
     },
     "autonomous-debugging": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["code-refactorer"]
+      "reverse_dependents": ["code-refactorer", "debug-performance"]
     },
     "autonomous-testing": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": ["code-refactorer"]
+      "reverse_dependents": ["code-refactorer", "refactor-with-verification"]
     },
     "multi-agent-review": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["security-review"]
     },
     "model-router": {
       "depends_on": [],
-      "reverse_dependents": ["advanced-model-router"]
+      "reverse_dependents": ["advanced-model-router", "agentic-routing"]
     },
     "skill-creator": {
       "depends_on": [],
@@ -39,7 +40,7 @@
     },
     "workflow-orchestrator": {
       "depends_on": ["all"],
-      "reverse_dependents": []
+      "reverse_dependents": ["workflow-benchmarking"]
     },
     "advanced-model-router": {
       "depends_on": ["model-router"],
@@ -47,46 +48,97 @@
     },
     "agentic-workflow-engine": {
       "depends_on": ["all", "vector_memory"],
-      "reverse_dependents": []
+      "reverse_dependents": ["agentic-routing"]
     },
     "security-audit": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["security-dependency-audit", "secure-release", "security-review"]
     },
     "dependency-management": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["security-dependency-audit"]
     },
     "release-coordinator": {
       "depends_on": ["all"],
-      "reverse_dependents": []
+      "reverse_dependents": ["secure-release"]
     },
     "performance-profiler": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["performance-optimization", "performance-observability", "debug-performance"]
     },
     "code-refactorer": {
       "depends_on": ["codebase-intelligence", "autonomous-testing"],
-      "reverse_dependents": []
+      "reverse_dependents": ["performance-optimization", "refactor-with-verification"]
     },
     "documentation-synthesizer": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["architecture-documentation"]
     },
     "observability-instrumenter": {
       "depends_on": ["codebase-intelligence"],
-      "reverse_dependents": []
+      "reverse_dependents": ["performance-observability"]
     },
     "skill-benchmarker": {
       "depends_on": ["skill-creator"],
-      "reverse_dependents": []
+      "reverse_dependents": ["workflow-benchmarking"]
+    },
+    "security-dependency-audit": {
+      "depends_on": ["security-audit", "dependency-management"],
+      "reverse_dependents": [],
+      "combination_of": ["security-audit", "dependency-management"]
+    },
+    "performance-optimization": {
+      "depends_on": ["performance-profiler", "code-refactorer"],
+      "reverse_dependents": [],
+      "combination_of": ["performance-profiler", "code-refactorer"]
+    },
+    "architecture-documentation": {
+      "depends_on": ["codebase-intelligence", "documentation-synthesizer"],
+      "reverse_dependents": [],
+      "combination_of": ["codebase-intelligence", "documentation-synthesizer"]
+    },
+    "performance-observability": {
+      "depends_on": ["observability-instrumenter", "performance-profiler"],
+      "reverse_dependents": [],
+      "combination_of": ["observability-instrumenter", "performance-profiler"]
+    },
+    "secure-release": {
+      "depends_on": ["release-coordinator", "security-audit"],
+      "reverse_dependents": [],
+      "combination_of": ["release-coordinator", "security-audit"]
+    },
+    "debug-performance": {
+      "depends_on": ["autonomous-debugging", "performance-profiler"],
+      "reverse_dependents": [],
+      "combination_of": ["autonomous-debugging", "performance-profiler"]
+    },
+    "refactor-with-verification": {
+      "depends_on": ["code-refactorer", "autonomous-testing"],
+      "reverse_dependents": [],
+      "combination_of": ["code-refactorer", "autonomous-testing"]
+    },
+    "security-review": {
+      "depends_on": ["multi-agent-review", "security-audit"],
+      "reverse_dependents": [],
+      "combination_of": ["multi-agent-review", "security-audit"]
+    },
+    "workflow-benchmarking": {
+      "depends_on": ["workflow-orchestrator", "skill-benchmarker"],
+      "reverse_dependents": [],
+      "combination_of": ["workflow-orchestrator", "skill-benchmarker"]
+    },
+    "agentic-routing": {
+      "depends_on": ["agentic-workflow-engine", "model-router"],
+      "reverse_dependents": [],
+      "combination_of": ["agentic-workflow-engine", "model-router"]
     }
   },
   "dependency_statistics": {
     "no_dependencies": 4,
     "single_dependency": 8,
-    "multiple_dependencies": 2,
+    "multiple_dependencies": 11,
     "depends_on_all": 3,
-    "root_skills": ["codebase-intelligence", "model-router", "skill-creator"]
+    "root_skills": ["codebase-intelligence", "model-router", "skill-creator"],
+    "combination_skills": 10
   }
 }

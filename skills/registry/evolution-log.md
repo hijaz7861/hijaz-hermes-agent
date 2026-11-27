@@ -41,3 +41,43 @@ Gap analysis against the existing 12-skill set identified missing coverage in:
 DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEATE
 
 Current phase: DOCUMENT (registry and playbooks pending)
+
+## v2.0.0 — 2026-11-27: Skill Combination & Innovation Engine
+
+### New Combination Skills Created (10)
+
+Each skill combines two existing capabilities (A + B = AB) to produce a distinct, reusable capability:
+
+| Skill | Combines | Category | Purpose | Dependencies |
+|-------|----------|----------|---------|--------------|
+| `security-dependency-audit` | security-audit + dependency-management | Security Engineering | Dependency audit with security focus — vulnerable packages, CVEs, secure remediation | `security-audit`, `dependency-management` |
+| `performance-optimization` | performance-profiler + code-refactorer | Performance Optimization | Profile bottlenecks then refactor hot paths — verified performance gains | `performance-profiler`, `code-refactorer` |
+| `architecture-documentation` | codebase-intelligence + documentation-synthesizer | Documentation | Architecture map + synthesized docs — API reference, module overviews, data flow | `codebase-intelligence`, `documentation-synthesizer` |
+| `performance-observability` | observability-instrumenter + performance-profiler | DevOps & Infrastructure | Instrument code + profile overhead — observability with measured impact | `observability-instrumenter`, `performance-profiler` |
+| `secure-release` | release-coordinator + security-audit | Security Engineering | Release coordination with mandatory security audit gate | `release-coordinator`, `security-audit` |
+| `debug-performance` | autonomous-debugging + performance-profiler | Debugging | Debug performance defects — reproduce slowness, fix with benchmark verification | `autonomous-debugging`, `performance-profiler` |
+| `refactor-with-verification` | code-refactorer + autonomous-testing | Software Engineering | Refactor with test verification — characterization tests, test gate | `code-refactorer`, `autonomous-testing` |
+| `security-review` | multi-agent-review + security-audit | Security Engineering | Security-focused multi-agent review — adversarial review, severity classification | `multi-agent-review`, `security-audit` |
+| `workflow-benchmarking` | workflow-orchestrator + skill-benchmarker | Multi-Agent Orchestration | Benchmark multi-skill workflows — compare configurations, identify bottlenecks | `workflow-orchestrator`, `skill-benchmarker` |
+| `agentic-routing` | agentic-workflow-engine + model-router | Multi-Agent Orchestration | Autonomous execution with model routing — per-subtask optimal model selection | `agentic-workflow-engine`, `model-router` |
+
+### Registry Infrastructure Updated
+
+- `skills/registry/skills-index.json` — Updated to v2.0.0, 27 total skills with combination metadata
+- `skills/registry/skill-dependencies.json` — Updated dependency graph with reverse dependents and combination_of markers
+- `skills/registry/evaluation-history.json` — Template preserved for comparative evaluation records
+- `skills/registry/evolution-log.md` — This file
+
+### Combination Strategy Applied
+
+Following the framework's Skill Combination & Innovation Engine:
+- **Skill A + Skill B = New Skill AB**: Each combination demonstrates a distinct, reusable capability
+- **No meaningless combinations**: Every combination solves a real gap not covered by either skill alone
+- **Playbooks created**: 3 scenarios each (normal, failure, safety) for all 10 combination skills
+- **Registry updated**: skills-index.json, skill-dependencies.json, SKILLS.md, README.md
+
+### Evolution Cycle State
+
+DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
+
+Current phase: COMPLETE (v2.0.0 — all 27 skills registered, playbooks created, registry updated)
