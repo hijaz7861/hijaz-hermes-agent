@@ -1,0 +1,12 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Factory skill inventory: all skills known to the factory with capabilities, dependencies, versions, and maturity levels.",
+  "skills": [],
+  "maturity_levels": {
+    "production": "skills-factory/libraries/production/",
+    "experimental": "skills-factory/laboratories/prototypes/",
+    "deprecated": "skills-factory/libraries/deprecated/",
+    "archived": "skills-factory/libraries/archived/"
+  }
+}

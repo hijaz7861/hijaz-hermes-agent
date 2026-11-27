@@ -1,6 +1,6 @@
 # HIJAZ Hermes Agent Skills
 
-[![Skills](https://img.shields.io/badge/skills-37-brightgreen)](SKILLS.md)
+[![Skills](https://img.shields.io/badge/skills-51-brightgreen)](SKILLS.md)
 [![Playbooks](https://img.shields.io/badge/playbooks-8-blue)](playbooks/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-compatible-purple)](https://github.com/hijaz/hermes)
@@ -104,6 +104,19 @@ hermes run skill-creator --goal "Create skill for our API contract testing"
 | [`database-reliability-engine`](skills/database-reliability-engine/SKILL.md) | Performance Optimization | ⭐⭐⭐⭐ | Database reliability — query optimization, schema linting, coverage analysis |
 | [`security-operations-center`](skills/security-operations-center/SKILL.md) | Security Engineering | ⭐⭐⭐⭐ | Security operations — secret scanning, debugging, compliance, review, dependencies |
 | [`developer-experience-platform`](skills/developer-experience-platform/SKILL.md) | Software Engineering | ⭐⭐⭐⭐ | Developer experience — coverage analysis, verified refactoring, documentation |
+| [`factory-core`](skills-factory/factory-core.md) | Factory Engineering | ⭐⭐⭐⭐ | Central orchestration, lifecycle management, governance enforcement |
+| [`discovery-engine`](skills-factory/discovery-engine.md) | Factory Engineering | ⭐⭐ | Skill scanning, capability mapping, gap detection |
+| [`research-engine`](skills-factory/research-engine.md) | Factory Engineering | ⭐⭐ | Best practice research, procedure verification |
+| [`skill-analyzer`](skills-factory/skill-analyzer.md) | Factory Engineering | ⭐⭐ | Quality assessment, gap detection, improvement prioritization |
+| [`skill-generator`](skills-factory/skill-generator.md) | Factory Engineering | ⭐⭐ | Standardized skill creation, playbook generation |
+| [`combination-engine`](skills-factory/combination-engine.md) | Factory Engineering | ⭐⭐⭐ | Multi-skill combination, synergy validation |
+| [`testing-engine`](skills-factory/testing-engine.md) | Factory Engineering | ⭐⭐ | Comparative evaluation, adopt/reject/iterate |
+| [`benchmark-engine`](skills-factory/benchmark-engine.md) | Factory Engineering | ⭐⭐ | Multi-metric measurement, statistical significance |
+| [`security-engine`](skills-factory/security-engine.md) | Factory Engineering | ⭐⭐ | Secret detection, gate verification, privacy check |
+| [`optimization-engine`](skills-factory/optimization-engine.md) | Factory Engineering | ⭐⭐ | Bottleneck identification, before/after benchmarking |
+| [`evolution-engine`](skills-factory/evolution-engine.md) | Factory Engineering | ⭐⭐ | Version tracking, improvement history |
+| [`quality-control`](skills-factory/quality-control.md) | Factory Engineering | ⭐⭐⭐ | Checklist validation, production promotion |
+| [`meta-skills-factory`](skills-factory/meta-skills-factory/SKILL.md) | Meta-Engineering | ⭐⭐⭐⭐⭐ | Recursive self-improvement, factory component optimization |
 
 ---
 
@@ -418,6 +431,45 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
     ├── database-reliability-engine/
     ├── security-operations-center/
     └── developer-experience-platform/
+├── skills-factory/                # Skills Making Factory
+│   ├── README.md                  # Factory overview
+│   ├── factory-core.md            # Core orchestration
+│   ├── discovery-engine.md        # Skill scanning & gap detection
+│   ├── research-engine.md         # Best practice research
+├── skill-analyzer.md              # Skill quality analysis
+├── skill-generator.md             # New skill manufacturing
+├── combination-engine.md          # Skill combination (A+B=C)
+├── testing-engine.md              # Comparative testing
+├── benchmark-engine.md            # Performance benchmarking
+├── security-engine.md             # Security checks
+├── optimization-engine.md         # Skill optimization
+├── evolution-engine.md            # Continuous improvement
+├── quality-control.md             # Quality gates
+├── meta-skills-factory.md         # Factory self-improvement
+├── meta-skills-factory-playbook.md # Factory playbook
+├── meta-skills-factory/           # Meta-skill definition
+│   └── SKILL.md
+├── laboratories/
+│   ├── experiments/
+│   ├── prototypes/
+│   ├── failed-tests/
+│   └── benchmark-results/
+├── libraries/
+│   ├── production/
+│   ├── experimental/
+│   ├── deprecated/
+│   └── archived/
+├── registry/
+│   ├── skill-inventory.json
+│   ├── quality-decisions.json
+│   ├── pending-skills.json
+│   └── pending-combinations.json
+├── reports/
+├── audit-logs/
+└── factory-config/
+    ├── factory-config.json
+    ├── governance-rules.json
+    └── capability-matrix.json
 ```
 
 ---

@@ -1,0 +1,43 @@
+{
+  "factory_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "name": "HIJAZ Hermes Skills Making Factory",
+  "description": "Autonomous skills engineering ecosystem for creating, combining, testing, and improving reusable agent skills.",
+  "governance_rules": [
+    "Never overwrite a working production skill with an untested experiment.",
+    "Never delete original repository content without authorization.",
+    "Never copy copyrighted or restricted code without respecting its license.",
+    "Never introduce secrets or credentials into skill files.",
+    "Never claim a skill is tested without actual test evidence.",
+    "Maintain complete version history.",
+    "Keep experimental and production libraries separate.",
+    "Use isolated testing environments where possible.",
+    "Require authorization for destructive repository operations and external publication.",
+    "Ensure every production skill has documentation and reproducible tests."
+  ],
+  "quality_control": {
+    "required_sections": ["name", "description", "version", "tags", "objective", "trigger", "procedure", "safety_gates", "failure_handling", "completion_criteria"],
+    "playbook_scenarios": 3,
+    "benchmark_repetitions": 3,
+    "security_check_required": true,
+    "test_evidence_required": true
+  },
+  "benchmark": {
+    "min_repetitions": 3,
+    "metrics": ["accuracy", "reliability", "execution_time", "resource_consumption", "maintainability", "security"],
+    "statistical_significance_threshold": 0.05
+  },
+  "libraries": {
+    "production": "skills-factory/libraries/production/",
+    "experimental": "skills-factory/laboratories/prototypes/",
+    "deprecated": "skills-factory/libraries/deprecated/",
+    "archived": "skills-factory/libraries/archived/"
+  },
+  "promotion_criteria": {
+    "quality_control_pass": true,
+    "testing_adopt_decision": true,
+    "benchmark_no_critical_regression": true,
+    "security_scan_pass": true,
+    "documentation_complete": true
+  }
+}

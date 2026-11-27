@@ -1,0 +1,6 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Quality control decisions: approve/reject/request-changes with rationale.",
+  "decisions": []
+}

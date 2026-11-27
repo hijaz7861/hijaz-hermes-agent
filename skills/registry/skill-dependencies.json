@@ -237,14 +237,80 @@
       "depends_on": ["test-coverage-analyzer", "refactor-with-verification", "architecture-documentation", "code-refactorer"],
       "reverse_dependents": [],
       "combination_of": ["test-coverage-analyzer", "refactor-with-verification", "architecture-documentation", "code-refactorer"]
+    },
+    "factory-core": {
+      "depends_on": ["all factory components"],
+      "reverse_dependents": ["discovery-engine", "research-engine", "skill-analyzer", "skill-generator", "combination-engine", "testing-engine", "benchmark-engine", "security-engine", "optimization-engine", "evolution-engine", "quality-control", "meta-skills-factory"],
+      "combination_of": []
+    },
+    "discovery-engine": {
+      "depends_on": [],
+      "reverse_dependents": ["skill-analyzer", "combination-engine", "skill-generator"],
+      "combination_of": []
+    },
+    "research-engine": {
+      "depends_on": [],
+      "reverse_dependents": ["skill-generator"],
+      "combination_of": []
+    },
+    "skill-analyzer": {
+      "depends_on": ["discovery-engine"],
+      "reverse_dependents": ["skill-generator", "combination-engine"],
+      "combination_of": []
+    },
+    "skill-generator": {
+      "depends_on": ["skill-analyzer", "research-engine"],
+      "reverse_dependents": ["testing-engine"],
+      "combination_of": []
+    },
+    "combination-engine": {
+      "depends_on": ["discovery-engine", "skill-analyzer"],
+      "reverse_dependents": ["testing-engine"],
+      "combination_of": []
+    },
+    "testing-engine": {
+      "depends_on": ["skill-generator", "combination-engine"],
+      "reverse_dependents": ["benchmark-engine", "quality-control"],
+      "combination_of": []
+    },
+    "benchmark-engine": {
+      "depends_on": ["testing-engine"],
+      "reverse_dependents": ["quality-control", "optimization-engine"],
+      "combination_of": []
+    },
+    "security-engine": {
+      "depends_on": [],
+      "reverse_dependents": ["quality-control"],
+      "combination_of": []
+    },
+    "optimization-engine": {
+      "depends_on": ["benchmark-engine", "testing-engine"],
+      "reverse_dependents": [],
+      "combination_of": []
+    },
+    "evolution-engine": {
+      "depends_on": ["quality-control", "testing-engine"],
+      "reverse_dependents": [],
+      "combination_of": []
+    },
+    "quality-control": {
+      "depends_on": ["testing-engine", "benchmark-engine", "security-engine"],
+      "reverse_dependents": ["evolution-engine", "meta-skills-factory"],
+      "combination_of": []
+    },
+    "meta-skills-factory": {
+      "depends_on": ["factory-core", "evolution-engine", "optimization-engine", "quality-control", "benchmark-engine", "testing-engine"],
+      "reverse_dependents": [],
+      "combination_of": []
     }
   },
   "dependency_statistics": {
     "no_dependencies": 4,
     "single_dependency": 8,
-    "multiple_dependencies": 21,
+    "multiple_dependencies": 35,
     "depends_on_all": 3,
     "root_skills": ["codebase-intelligence", "model-router", "skill-creator"],
-    "combination_skills": 20
+    "combination_skills": 20,
+    "factory_skills": 14
   }
 }

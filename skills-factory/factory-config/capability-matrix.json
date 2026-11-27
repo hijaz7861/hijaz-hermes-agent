@@ -1,0 +1,42 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Factory capability matrix: target capabilities the skills ecosystem should cover.",
+  "categories": [
+    "Software Engineering",
+    "Repository Analysis",
+    "Debugging",
+    "Security Engineering",
+    "AI Agent Development",
+    "Automation",
+    "Testing & Quality Assurance",
+    "Research & Intelligence",
+    "DevOps & Infrastructure",
+    "Performance Optimization",
+    "Documentation",
+    "Multi-Agent Orchestration"
+  ],
+  "capabilities": {
+    "reads_code": "Ability to read and analyze source code",
+    "runs_commands": "Ability to execute commands and tests",
+    "modifies_code": "Ability to modify source code",
+    "spawns_agents": "Ability to spawn sub-agents",
+    "selects_models": "Ability to select and route AI models",
+    "creates_skills": "Ability to create new skills",
+    "produces_reports": "Ability to produce evidence-based reports"
+  },
+  "target_coverage": {
+    "software_engineering": ["refactoring", "code_generation", "code_review", "documentation"],
+    "repository_analysis": ["mapping", "tracing", "baseline_establishment"],
+    "debugging": ["root_cause_analysis", "reproduction", "regression_testing", "performance_debugging"],
+    "security_engineering": ["secret_scanning", "vulnerability_audit", "compliance_auditing", "security_review", "dependency_audit"],
+    "ai_agent_development": ["skill_creation", "skill_benchmarking", "skill_evaluation", "meta_skill_factory"],
+    "automation": ["workflow_orchestration", "agentic_execution", "release_coordination", "model_routing"],
+    "testing_quality_assurance": ["test_generation", "test_execution", "coverage_analysis", "quality_gates"],
+    "research_intelligence": ["technical_research", "best_practice_verification", "gap_analysis"],
+    "devops_infrastructure": ["observability", "release_management", "dependency_management", "error_budget_tracking"],
+    "performance_optimization": ["profiling", "benchmarking", "query_optimization", "chaos_engineering"],
+    "documentation": ["api_docs", "architecture_docs", "migration_guides", "readme_synthesis"],
+    "multi_agent_orchestration": ["workflow_composition", "skill_combination", "autonomous_loops", "self_correction"]
+  }
+}

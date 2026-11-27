@@ -55,6 +55,19 @@ Central index of all available skills with metadata for discovery, routing, and 
 | `database-reliability-engine` | Performance Optimization | Very High | Database reliability — query optimization, schema linting, coverage analysis | `database-query-optimizer`, `database-schema-linter`, `test-coverage-analyzer` |
 | `security-operations-center` | Security Engineering | Very High | Security operations — secret scanning, debugging, compliance, review, dependencies | `secret-scanner-historical`, `security-debugger`, `compliance-auditor`, `security-review`, `security-dependency-audit` |
 | `developer-experience-platform` | Software Engineering | Very High | Developer experience — coverage analysis, verified refactoring, documentation | `test-coverage-analyzer`, `refactor-with-verification`, `architecture-documentation`, `code-refactorer` |
+| `factory-core` | Multi-Agent Orchestration | Very High | Central orchestration, lifecycle management, governance enforcement | `all factory components` |
+| `discovery-engine` | Repository Analysis | Medium | Skill scanning, capability mapping, gap detection | `None` |
+| `research-engine` | Research & Intelligence | Medium | Best practice research, procedure verification | `None` |
+| `skill-analyzer` | AI Agent Development | Medium | Quality assessment, gap detection, improvement prioritization | `discovery-engine` |
+| `skill-generator` | AI Agent Development | Medium | Standardized skill creation, playbook generation | `skill-analyzer`, `research-engine` |
+| `combination-engine` | Multi-Agent Orchestration | High | Multi-skill combination, synergy validation | `discovery-engine`, `skill-analyzer` |
+| `testing-engine` | Testing & Quality Assurance | Medium | Comparative evaluation, adopt/reject/iterate | `skill-generator`, `combination-engine` |
+| `benchmark-engine` | Testing & Quality Assurance | Medium | Multi-metric measurement, statistical significance | `testing-engine` |
+| `security-engine` | Security Engineering | Medium | Secret detection, gate verification, privacy check | `None` |
+| `optimization-engine` | Performance Optimization | Medium | Bottleneck identification, before/after benchmarking | `benchmark-engine`, `testing-engine` |
+| `evolution-engine` | AI Agent Development | Medium | Version tracking, improvement history | `quality-control`, `testing-engine` |
+| `quality-control` | Security Engineering | High | Checklist validation, production promotion | `testing-engine`, `benchmark-engine`, `security-engine` |
+| `meta-skills-factory` | AI Agent Development | Very High | Recursive self-improvement, factory component optimization | `factory-core`, `evolution-engine`, `optimization-engine`, `quality-control`, `benchmark-engine`, `testing-engine` |
 
 ---
 
@@ -74,6 +87,8 @@ Central index of all available skills with metadata for discovery, routing, and 
 | **Documentation** | Generate and synchronize docs from source code | Stale docs, missing API reference, onboarding |
 | **DevOps & Infrastructure** | Manage releases, dependencies, observability, and model routing | Deployments, dependency updates, monitoring, routing |
 | **AI Agent Development** | Create, evaluate, and benchmark agent skills | New skill creation, skill comparison, quality assurance |
+| **Factory Engineering** | Build and operate the skills manufacturing pipeline | Skill creation, combination, testing, benchmarking |
+| **Meta-Engineering** | Improve the factory's own capability to produce better skills | Recursive self-improvement, factory optimization |
 
 ---
 
@@ -589,6 +604,125 @@ Output: DX report: coverage gaps, refactoring results, documentation, maintainab
 Time: Variable (minutes to hours)
 Features: 4-skill integration, coverage analysis + verified refactoring + documentation
 ```
+
+### factory-core
+```
+Trigger: "Coordinate factory pipeline" / "Manage skill lifecycle"
+Input: Skill manufacturing request, factory configuration
+Output: Factory execution report, lifecycle state transitions, audit log entries
+Time: Variable (depends on pipeline complexity)
+Features: Central orchestration, governance enforcement, lifecycle tracking, sub-component routing
+```
+
+### discovery-engine
+```
+Trigger: "Scan skills repository" / "Map skill capabilities"
+Input: Skills directory, registry file, dependency graph
+Output: Discovery report, skill inventory map, gap analysis
+Time: 5-15 min
+Features: Skill scanning, capability mapping, gap detection, dependency graph building
+```
+
+### research-engine
+```
+Trigger: "Research best practices for domain X" / "Verify skill procedures"
+Input: Skill design proposal, target domain, requirements
+Output: Research report, verified procedures, source citations
+Time: 10-30 min
+Features: Technical research, procedure verification, source documentation
+```
+
+### skill-analyzer
+```
+Trigger: "Analyze skill quality" / "Detect capability gaps"
+Input: Discovery report, skill inventory, gap analysis
+Output: Analysis report, improvement recommendations, new skill proposals
+Time: 10-30 min
+Features: Quality assessment, gap detection, improvement prioritization
+```
+
+### skill-generator
+```
+Trigger: "Create new skill X" / "Manufacture skill from proposal"
+Input: Skill proposal, research notes, factory template standards
+Output: New SKILL.md, new playbook, registration entry
+Time: 10-20 min
+Features: Standardized skill creation, playbook generation, quality validation
+```
+
+### combination-engine
+```
+Trigger: "Combine skills A+B+C" / "Create integrated capability"
+Input: Skill inventory, capability gap analysis, combination proposals
+Output: Composite SKILL.md, composite playbook, combination rationale
+Time: 15-30 min
+Features: Multi-skill combination, synergy validation, new capability creation
+```
+
+### testing-engine
+```
+Trigger: "Test new skill against original" / "Comparative evaluation"
+Input: New skill, original skill, test scenario, metrics
+Output: Test results, comparative evaluation, regression report
+Time: 10-30 min
+Features: Identical scenario comparison, 6-metric evaluation, adopt/reject/iterate
+```
+
+### benchmark-engine
+```
+Trigger: "Benchmark skill performance" / "Measure skill metrics"
+Input: Skill, test scenario, repetitions, metric definitions
+Output: Benchmark results, performance metrics, reliability metrics
+Time: 5-15 min
+Features: Multi-repetition measurement, statistical significance, security checking
+```
+
+### security-engine
+```
+Trigger: "Security scan skill X" / "Check skill for secrets"
+Input: Skill file, playbook file, security policy
+Output: Security scan report, pass/fail determination, findings
+Time: 2-5 min
+Features: Secret detection, gate verification, privacy check, failure mode validation
+```
+
+### optimization-engine
+```
+Trigger: "Optimize skill X for performance" / "Improve skill efficiency"
+Input: Benchmark results, test results, skill performance metrics
+Output: Optimization proposal, optimization results, updated skill
+Time: 10-20 min
+Features: Bottleneck identification, before/after benchmarking, quality preservation
+```
+
+### evolution-engine
+```
+Trigger: "Track skill version" / "Trigger skill re-evaluation"
+Input: Quality decisions, test results, security scans, factory metrics
+Output: Evolution log entries, version bumps, re-evaluation triggers
+Time: 2-10 min
+Features: Version tracking, improvement history, re-evaluation queue
+```
+
+### quality-control
+```
+Trigger: "Quality gate skill X" / "Review skill for production"
+Input: New skill, test results, benchmark results, security scan
+Output: Quality decision, production skill, rejection report
+Time: 5-15 min
+Features: Checklist validation, production promotion, rejection documentation
+```
+
+### meta-skills-factory
+```
+Trigger: "Improve the factory's skill creation success rate" / "Meta-improvement: enhance factory components"
+Input: Factory performance metrics, component performance data, governance compliance data
+Output: Factory improvement report, component improvements, meta-evaluation
+Time: Variable (minutes to hours)
+Features: Recursive self-improvement, factory performance measurement, component optimization
+```
+
+---
 
 ---
 

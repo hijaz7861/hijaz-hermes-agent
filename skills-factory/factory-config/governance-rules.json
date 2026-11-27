@@ -1,0 +1,67 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Factory governance rules. All factory components must follow these rules.",
+  "rules": [
+    {
+      "id": "GOV-001",
+      "rule": "Never overwrite a working production skill with an untested experiment.",
+      "enforcement": "quality_control",
+      "severity": "critical"
+    },
+    {
+      "id": "GOV-002",
+      "rule": "Never delete original repository content without authorization.",
+      "enforcement": "factory_core",
+      "severity": "critical"
+    },
+    {
+      "id": "GOV-003",
+      "rule": "Never copy copyrighted or restricted code without respecting its license.",
+      "enforcement": "skill_generator",
+      "severity": "high"
+    },
+    {
+      "id": "GOV-004",
+      "rule": "Never introduce secrets or credentials into skill files.",
+      "enforcement": "security_engine",
+      "severity": "critical"
+    },
+    {
+      "id": "GOV-005",
+      "rule": "Never claim a skill is tested without actual test evidence.",
+      "enforcement": "testing_engine",
+      "severity": "high"
+    },
+    {
+      "id": "GOV-006",
+      "rule": "Maintain complete version history.",
+      "enforcement": "evolution_engine",
+      "severity": "high"
+    },
+    {
+      "id": "GOV-007",
+      "rule": "Keep experimental and production libraries separate.",
+      "enforcement": "quality_control",
+      "severity": "high"
+    },
+    {
+      "id": "GOV-008",
+      "rule": "Use isolated testing environments where possible.",
+      "enforcement": "testing_engine",
+      "severity": "medium"
+    },
+    {
+      "id": "GOV-009",
+      "rule": "Require authorization for destructive repository operations and external publication.",
+      "enforcement": "factory_core",
+      "severity": "critical"
+    },
+    {
+      "id": "GOV-010",
+      "rule": "Ensure every production skill has documentation and reproducible tests.",
+      "enforcement": "quality_control",
+      "severity": "high"
+    }
+  ]
+}
