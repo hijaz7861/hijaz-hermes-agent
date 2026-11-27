@@ -151,3 +151,25 @@ Following the framework's Skill Combination & Innovation Engine:
 DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
 
 Current phase: COMPLETE (v4.0.0 — all 37 skills registered, playbooks created, registry updated, ready for GitHub push)
+
+## v4.0.1 — 2026-11-27: Factory Execution Layer
+
+### New Factory Skills Created (2)
+
+| Skill | Category | Purpose | Dependencies |
+|-------|----------|---------|--------------|
+| `skill-launcher` | Factory Engineering | Launches skills with context, parameters, execution tracking, input validation, output collection, and audit trails | `skill-reader`, `skill-benchmarker`, `workflow-orchestrator` |
+| `skill-suggestion-engine` | Factory Engineering | Suggests relevant skills based on user intent, context, task type, and historical usage with ranked recommendations | `skill-reader`, `skill-pattern-recognizer`, `skill-category-manager`, `discovery-engine` |
+
+### Registry Infrastructure Updated
+
+- `skills/registry/skills-index.json` — Updated to 53 total skills with factory execution layer
+- `skills/registry/skill-dependencies.json` — Updated dependency graph with launcher and suggestion engine
+- `skills/registry/evaluation-history.json` — Template preserved for comparative evaluation records
+- `skills/registry/evolution-log.md` — This file
+
+### Evolution Cycle State
+
+DISCOVER → ANALYZE → COMBINE → CREATE → TEST → COMPARE → IMPROVE → DOCUMENT → REPEAT
+
+Current phase: COMPLETE (v4.0.1 — all 53 skills registered, factory execution layer complete, ready for GitHub push)

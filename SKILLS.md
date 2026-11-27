@@ -68,6 +68,8 @@ Central index of all available skills with metadata for discovery, routing, and 
 | `evolution-engine` | AI Agent Development | Medium | Version tracking, improvement history | `quality-control`, `testing-engine` |
 | `quality-control` | Security Engineering | High | Checklist validation, production promotion | `testing-engine`, `benchmark-engine`, `security-engine` |
 | `meta-skills-factory` | AI Agent Development | Very High | Recursive self-improvement, factory component optimization | `factory-core`, `evolution-engine`, `optimization-engine`, `quality-control`, `benchmark-engine`, `testing-engine` |
+| `skill-launcher` | Factory Engineering | High | Launches skills with context, parameters, and execution tracking | `skill-reader`, `skill-benchmarker`, `workflow-orchestrator` |
+| `skill-suggestion-engine` | Factory Engineering | High | Suggests relevant skills based on intent, context, and usage | `skill-reader`, `skill-pattern-recognizer`, `skill-category-manager`, `discovery-engine` |
 
 ---
 
@@ -721,6 +723,26 @@ Output: Factory improvement report, component improvements, meta-evaluation
 Time: Variable (minutes to hours)
 Features: Recursive self-improvement, factory performance measurement, component optimization
 ```
+
+### skill-launcher
+```
+Trigger: "Launch skill X with parameters" / "Execute skill Y on repository Z"
+Input: Skill name, skill inputs, execution context, output requirements, safety constraints
+Output: Execution result, evidence log, performance metrics, validation results, audit trail
+Time: Variable (depends on skill)
+Features: Skill invocation, input validation, output collection, safety gate checking, audit trail
+```
+
+### skill-suggestion-engine
+```
+Trigger: "Suggest skills for task X" / "Which skill should I use for Y?"
+Input: User request, context, task type, user preferences, constraints
+Output: Ranked skill suggestions with confidence scores, rationale, combinations, execution guidance
+Time: <1 min
+Features: Intent matching, context-aware ranking, skill combinations, execution guidance
+```
+
+---
 
 ---
 

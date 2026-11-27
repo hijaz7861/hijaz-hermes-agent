@@ -1,6 +1,6 @@
 # HIJAZ Hermes Agent Skills
 
-[![Skills](https://img.shields.io/badge/skills-51-brightgreen)](SKILLS.md)
+[![Skills](https://img.shields.io/badge/skills-53-brightgreen)](SKILLS.md)
 [![Playbooks](https://img.shields.io/badge/playbooks-8-blue)](playbooks/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-compatible-purple)](https://github.com/hijaz/hermes)
@@ -117,6 +117,8 @@ hermes run skill-creator --goal "Create skill for our API contract testing"
 | [`evolution-engine`](skills-factory/evolution-engine.md) | Factory Engineering | ⭐⭐ | Version tracking, improvement history |
 | [`quality-control`](skills-factory/quality-control.md) | Factory Engineering | ⭐⭐⭐ | Checklist validation, production promotion |
 | [`meta-skills-factory`](skills-factory/meta-skills-factory/SKILL.md) | Meta-Engineering | ⭐⭐⭐⭐⭐ | Recursive self-improvement, factory component optimization |
+| [`skill-launcher`](skills/skill-launcher/SKILL.md) | Factory Engineering | ⭐⭐⭐ | Launches skills with context, parameters, execution tracking |
+| [`skill-suggestion-engine`](skills/skill-suggestion-engine/SKILL.md) | Factory Engineering | ⭐⭐⭐ | Suggests relevant skills based on intent, context, and usage |
 
 ---
 

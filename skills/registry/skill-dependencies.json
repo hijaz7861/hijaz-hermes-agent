@@ -302,15 +302,25 @@
       "depends_on": ["factory-core", "evolution-engine", "optimization-engine", "quality-control", "benchmark-engine", "testing-engine"],
       "reverse_dependents": [],
       "combination_of": []
+    },
+    "skill-launcher": {
+      "depends_on": ["skill-reader", "skill-benchmarker", "workflow-orchestrator"],
+      "reverse_dependents": [],
+      "combination_of": []
+    },
+    "skill-suggestion-engine": {
+      "depends_on": ["skill-reader", "skill-pattern-recognizer", "skill-category-manager", "discovery-engine"],
+      "reverse_dependents": [],
+      "combination_of": []
     }
   },
   "dependency_statistics": {
     "no_dependencies": 4,
     "single_dependency": 8,
-    "multiple_dependencies": 35,
+    "multiple_dependencies": 37,
     "depends_on_all": 3,
     "root_skills": ["codebase-intelligence", "model-router", "skill-creator"],
     "combination_skills": 20,
-    "factory_skills": 14
+    "factory_skills": 16
   }
 }

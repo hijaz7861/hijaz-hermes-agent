@@ -2,7 +2,7 @@
   "registry_version": "4.0.0",
   "generated_at": "2026-11-27",
   "source": "HIJAZ Hermes Skills Repository",
-  "total_skills": 51,
+  "total_skills": 53,
   "categories": [
     "Software Engineering",
     "Repository Analysis",
@@ -996,6 +996,44 @@
       "protocol_version": 3,
       "path": "skills-factory/meta-skills-factory/SKILL.md",
       "playbook": "skills-factory/meta-skills-factory-playbook.md"
+    },
+    {
+      "name": "skill-launcher",
+      "category": "Factory Engineering",
+      "complexity": "High",
+      "version": "1.0.0",
+      "description": "Launches skills with proper context, parameters, and execution tracking. Manages skill invocation, input validation, output collection, and result reporting.",
+      "tags": ["launcher", "execution", "invocation", "skill-orchestration", "context-management"],
+      "dependencies": ["skill-reader", "skill-benchmarker", "workflow-orchestrator"],
+      "capabilities": ["reads_code", "produces_reports"],
+      "modifies_code": false,
+      "spawns_agents": false,
+      "selects_models": false,
+      "creates_skills": false,
+      "produces_reports": true,
+      "min_hermes_version": "1.0.0",
+      "protocol_version": 1,
+      "path": "skills/skill-launcher/SKILL.md",
+      "playbook": "playbooks/skill-launcher.md"
+    },
+    {
+      "name": "skill-suggestion-engine",
+      "category": "Factory Engineering",
+      "complexity": "High",
+      "version": "1.0.0",
+      "description": "Suggests relevant skills based on user intent, context, task type, and historical usage. Provides ranked recommendations with rationale.",
+      "tags": ["suggestion", "recommendation", "intent-matching", "skill-discovery", "context-aware"],
+      "dependencies": ["skill-reader", "skill-pattern-recognizer", "skill-category-manager", "discovery-engine"],
+      "capabilities": ["reads_code", "produces_reports"],
+      "modifies_code": false,
+      "spawns_agents": false,
+      "selects_models": false,
+      "creates_skills": false,
+      "produces_reports": true,
+      "min_hermes_version": "1.0.0",
+      "protocol_version": 1,
+      "path": "skills/skill-suggestion-engine/SKILL.md",
+      "playbook": "playbooks/skill-suggestion-engine.md"
     }
   ]
 }
