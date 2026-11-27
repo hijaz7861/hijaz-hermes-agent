@@ -330,3 +330,21 @@ MIT License — see [`LICENSE`](LICENSE) for details.
 ---
 
 *Built with discipline. Used in production. Evolved by feedback.*
+
+## 🧪 Experimental Runtime Adapter: Free-Only OpenRouter
+
+The `feat/free-only-openrouter-runtime` branch introduces an isolated Python adapter prototype at `runtime/openrouter_free.py`.
+
+- Discovers models from OpenRouter's live catalogue.
+- Allows only models whose published input and output token prices are both zero.
+- Performs bounded failover across verified free models on retryable errors.
+- Never adds a paid model as a fallback.
+- Includes unit tests for free-model filtering, rate-limit failover, and fail-closed behavior.
+
+This is **not yet integrated into the Hermes runtime**. It requires an OpenRouter API key even for free model access, and availability/quotas remain subject to provider policy. See [the adapter implementation notes](docs/free-only-openrouter-adapter.md), the [upstream runtime integration map](docs/upstream-runtime-integration.md), and the [per-user GitHub identity and attribution policy](docs/user-identity-and-attribution.md).
+
+Run its tests with:
+
+```bash
+python -m unittest discover -s tests -v
+```
