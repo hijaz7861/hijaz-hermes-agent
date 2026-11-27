@@ -1,6 +1,6 @@
 # HIJAZ Hermes Agent Skills
 
-[![Skills](https://img.shields.io/badge/skills-9-brightgreen)](SKILLS.md)
+[![Skills](https://img.shields.io/badge/skills-17-brightgreen)](SKILLS.md)
 [![Playbooks](https://img.shields.io/badge/playbooks-8-blue)](playbooks/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-compatible-purple)](https://github.com/hijaz/hermes)
@@ -66,6 +66,14 @@ hermes run skill-creator --goal "Create skill for our API contract testing"
 | [`skill-creator`](skills/skill-creator/SKILL.md) | Meta | ⭐⭐ | Turn recurring workflows into maintainable skills |
 | [`workflow-orchestrator`](skills/workflow-orchestrator/SKILL.md) | Orchestration | ⭐⭐⭐ | Compose skills into DAGs with gates, checkpoints, audit trails |
 | [`agentic-workflow-engine`](skills/agentic-workflow-engine/SKILL.md) | Orchestration | ⭐⭐⭐⭐ | Autonomous loops, self-correction, meta-learning, critic evaluation |
+| [`security-audit`](skills/security-audit/SKILL.md) | Governance | ⭐⭐ | Secrets scan, dependency audit, insecure config, trust boundaries |
+| [`dependency-management`](skills/dependency-management/SKILL.md) | Remediation | ⭐⭐ | Audit, patch, and verify dependency updates with rollback |
+| [`release-coordinator`](skills/release-coordinator/SKILL.md) | Orchestration | ⭐⭐⭐ | Release readiness, changelog, version bumps, gated approval |
+| [`performance-profiler`](skills/performance-profiler/SKILL.md) | Performance Optimization | ⭐⭐ | Identify bottlenecks via measurement, recommend optimizations, verify with benchmarks |
+| [`code-refactorer`](skills/code-refactorer/SKILL.md) | Software Engineering | ⭐⭐ | Safe behavior-preserving transformations with test verification |
+| [`documentation-synthesizer`](skills/documentation-synthesizer/SKILL.md) | Documentation | ⭐⭐ | Generate API docs, README sections, docstrings from code |
+| [`observability-instrumenter`](skills/observability-instrumenter/SKILL.md) | DevOps & Infrastructure | ⭐⭐ | Add structured logging, metrics, tracing, health checks |
+| [`skill-benchmarker`](skills/skill-benchmarker/SKILL.md) | AI Agent Development | ⭐⭐ | Evaluate and compare skill performance against baselines |
 
 ---
 
@@ -294,6 +302,16 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
 │   ├── model-router.md
 │   ├── skill-creator.md
 │   └── workflow-orchestrator.md
+│   ├── advanced-model-router.md
+│   ├── agentic-workflow-engine.md
+│   ├── security-audit.md
+│   ├── dependency-management.md
+│   └── release-coordinator.md
+│   ├── performance-profiler.md
+│   ├── code-refactorer.md
+│   ├── documentation-synthesizer.md
+│   ├── observability-instrumenter.md
+│   └── skill-benchmarker.md
 └── skills/                      # Skill definitions
     ├── codebase-intelligence/
     ├── autonomous-debugging/
@@ -302,6 +320,16 @@ See [`SKILL-COMPOSITION.md`](SKILL-COMPOSITION.md) for 10 patterns:
     ├── model-router/
     ├── skill-creator/
     └── workflow-orchestrator/
+    ├── advanced-model-router/
+    ├── agentic-workflow-engine/
+    ├── security-audit/
+    ├── dependency-management/
+    ├── release-coordinator/
+    ├── performance-profiler/
+    ├── code-refactorer/
+    ├── documentation-synthesizer/
+    ├── observability-instrumenter/
+    └── skill-benchmarker/
 ```
 
 ---

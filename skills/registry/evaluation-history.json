@@ -1,0 +1,29 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Comparative evaluation records for skill benchmarking. Each entry records a head-to-head or skill-vs-baseline test.",
+  "evaluations": [],
+  "evaluation_template": {
+    "evaluation_id": "eval_<timestamp>",
+    "date": "<ISO-8601>",
+    "original_skill": "<name>@<version>",
+    "new_skill": "<name>@<version>",
+    "combined_skills": ["<skill>", "..."],
+    "test_scenario": "<description>",
+    "fixture_repo": "<path or description>",
+    "metrics": {
+      "accuracy": {"original": 0, "new": 0, "unit": "percent_criteria_met"},
+      "reliability": {"original": 0, "new": 0, "unit": "success_rate"},
+      "execution_time_seconds": {"original": 0, "new": 0},
+      "resource_consumption": {"original": 0, "new": 0, "unit": "model_calls_or_memory_mb"},
+      "maintainability": {"original": 0, "new": 0, "unit": "subjective_score_1_10"},
+      "security": {"original": "pass/fail/blocked", "new": "pass/fail/blocked"}
+    },
+    "results": "<adopt|reject|iterate>",
+    "performance_differences": "<description of deltas>",
+    "identified_weaknesses": ["<weakness>", "..."],
+    "improvements_made": ["<improvement>", "..."],
+    "final_status": "<pending|verified|superseded>",
+    "evidence_ref": "<link to evaluation artifacts>"
+  }
+}

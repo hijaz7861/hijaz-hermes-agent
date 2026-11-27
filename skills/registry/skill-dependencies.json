@@ -1,0 +1,92 @@
+{
+  "registry_version": "1.0.0",
+  "generated_at": "2026-11-27",
+  "description": "Skill dependency graph. Each skill lists its direct dependencies and reverse dependents.",
+  "dependencies": {
+    "codebase-intelligence": {
+      "depends_on": [],
+      "reverse_dependents": [
+        "autonomous-debugging",
+        "autonomous-testing",
+        "multi-agent-review",
+        "security-audit",
+        "dependency-management",
+        "performance-profiler",
+        "code-refactorer",
+        "documentation-synthesizer",
+        "observability-instrumenter"
+      ]
+    },
+    "autonomous-debugging": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": ["code-refactorer"]
+    },
+    "autonomous-testing": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": ["code-refactorer"]
+    },
+    "multi-agent-review": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "model-router": {
+      "depends_on": [],
+      "reverse_dependents": ["advanced-model-router"]
+    },
+    "skill-creator": {
+      "depends_on": [],
+      "reverse_dependents": ["skill-benchmarker"]
+    },
+    "workflow-orchestrator": {
+      "depends_on": ["all"],
+      "reverse_dependents": []
+    },
+    "advanced-model-router": {
+      "depends_on": ["model-router"],
+      "reverse_dependents": []
+    },
+    "agentic-workflow-engine": {
+      "depends_on": ["all", "vector_memory"],
+      "reverse_dependents": []
+    },
+    "security-audit": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "dependency-management": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "release-coordinator": {
+      "depends_on": ["all"],
+      "reverse_dependents": []
+    },
+    "performance-profiler": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "code-refactorer": {
+      "depends_on": ["codebase-intelligence", "autonomous-testing"],
+      "reverse_dependents": []
+    },
+    "documentation-synthesizer": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "observability-instrumenter": {
+      "depends_on": ["codebase-intelligence"],
+      "reverse_dependents": []
+    },
+    "skill-benchmarker": {
+      "depends_on": ["skill-creator"],
+      "reverse_dependents": []
+    }
+  },
+  "dependency_statistics": {
+    "no_dependencies": 4,
+    "single_dependency": 8,
+    "multiple_dependencies": 2,
+    "depends_on_all": 3,
+    "root_skills": ["codebase-intelligence", "model-router", "skill-creator"]
+  }
+}

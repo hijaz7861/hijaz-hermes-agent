@@ -17,6 +17,14 @@ Central index of all available skills with metadata for discovery, routing, and 
 | `workflow-orchestrator` | Orchestration | High | Compose skills into complex workflows | All |
 | `advanced-model-router` | Infrastructure | Medium | Intelligent routing with OpenRouter, free/paid tiers, privacy gates, fallback chains | `model-router` |
 | `agentic-workflow-engine` | Orchestration | Very High | Autonomous goal execution with self-correction, learning, adaptive loops | All + vector memory |
+| `security-audit` | Governance | Medium | Secrets scan, dependency audit, insecure config, trust boundaries | `codebase-intelligence` |
+| `dependency-management` | Remediation | Medium | Audit, patch, and verify dependency updates with rollback | `codebase-intelligence` |
+| `release-coordinator` | Orchestration | High | Release readiness, changelog, version bumps, gated approval | All |
+| `performance-profiler` | Performance Optimization | Medium | Identify bottlenecks via measurement, recommend optimizations, verify with benchmarks | `codebase-intelligence` |
+| `code-refactorer` | Software Engineering | Medium | Safe behavior-preserving transformations with test verification | `codebase-intelligence`, `autonomous-testing` |
+| `documentation-synthesizer` | Documentation | Medium | Generate API docs, README sections, docstrings from code | `codebase-intelligence` |
+| `observability-instrumenter` | DevOps & Infrastructure | Medium | Add structured logging, metrics, tracing, health checks | `codebase-intelligence` |
+| `skill-benchmarker` | AI Agent Development | Medium | Evaluate and compare skill performance against baselines | `skill-creator` |
 
 ---
 
@@ -31,6 +39,11 @@ Central index of all available skills with metadata for discovery, routing, and 
 | **Infrastructure** | Optimize model selection and routing | Multi-provider, cost/latency optimization |
 | **Meta** | Create and maintain the skill ecosystem | New recurring workflows, skill gaps |
 | **Orchestration** | Chain skills for end-to-end workflows | Complex multi-phase tasks |
+| **Performance Optimization** | Identify bottlenecks, measure, and optimize code performance | Slow endpoints, high CPU/memory, latency issues |
+| **Software Engineering** | Improve code structure without changing behavior | Refactoring, code quality, maintainability |
+| **Documentation** | Generate and synchronize docs from source code | Stale docs, missing API reference, onboarding |
+| **DevOps & Infrastructure** | Manage releases, dependencies, observability, and model routing | Deployments, dependency updates, monitoring, routing |
+| **AI Agent Development** | Create, evaluate, and benchmark agent skills | New skill creation, skill comparison, quality assurance |
 
 ---
 
@@ -203,6 +216,78 @@ Input: High-level goal, constraints, success criteria
 Output: Executed workflow with self-correction, lessons learned, artifacts
 Time: Variable (minutes to hours)
 Features: Autonomous loops, self-correction, critic evaluation, meta-learning, vector memory
+```
+
+### performance-profiler
+```
+Trigger: "Profile this code for performance" / "Find bottlenecks in X"
+Input: Target file/module/function, workload, constraints
+Output: Bottleneck report, optimization recommendations, before/after benchmarks
+Time: 5-20 min
+Features: Measurement-first profiling, impact-ranked recommendations, before/after verification, rollback on regression
+```
+
+### code-refactorer
+```
+Trigger: "Refactor this module" / "Extract method from X" / "Rename Y"
+Input: Target code, transformation type, scope, constraints
+Output: Refactor plan, diff, verification results, behavior contract
+Time: 5-15 min
+Features: Behavior-preserving only, test gate (pass before and after), one transformation at a time, rollback on failure
+```
+
+### documentation-synthesizer
+```
+Trigger: "Generate API docs for X" / "Update README with Y" / "Sync docs with code"
+Input: Target code, format, audience, existing docs
+Output: Generated documentation, coverage report, staleness report
+Time: 5-15 min
+Features: Code-as-source-of-truth, no invented behavior, real examples from tests, contradiction detection
+```
+
+### observability-instrumenter
+```
+Trigger: "Add logging to X" / "Instrument Y for metrics" / "Add tracing to Z"
+Input: Target code, telemetry type, destination, constraints
+Output: Instrumentation diff, configuration, data-classification review, overhead estimate
+Time: 5-15 min
+Features: No secret logging, structured JSON, overhead budget, data classification, build/test verification
+```
+
+### skill-benchmarker
+```
+Trigger: "Compare skill A vs. skill B" / "Benchmark skill X on scenario Y"
+Input: Skills to compare, scenario, metrics, repetitions
+Output: Evaluation report, comparison matrix, winner determination, regression detection
+Time: 10-30 min
+Features: Identical scenario for both skills, six metrics (accuracy, reliability, time, resources, maintainability, security), adopt/reject/iterate decision
+```
+
+### security-audit
+```
+Trigger: "Security audit this repo" / "Check for secrets in code"
+Input: Repository root, optional focus area (secrets, dependencies, config)
+Output: Findings report with severity, location (file:line), remediation priority
+Time: 5-20 min
+Features: Secret detection (redacted), vulnerability audit, config/trust-boundary review, no secret output
+```
+
+### dependency-management
+```
+Trigger: "Update dependencies" / "Patch vulnerable dependencies"
+Input: Dependency manifests/lockfiles, optional allow-list of packages
+Output: Dependency report, applied updates, pending approvals, rollback state
+Time: 3-15 min
+Features: Vulnerability detection, minimal patch/minor updates, test-verified, rollback on failure
+```
+
+### release-coordinator
+```
+Trigger: "Prepare release vX.Y.Z" / "Release readiness check"
+Input: Target version, branch, release criteria
+Output: Release report, changelog, gate status (passed/failed/blocked)
+Time: Variable (minutes to hours)
+Features: Readiness checks, changelog assembly, approval-gated version bump, no deploy/publish
 ```
 
 ---
