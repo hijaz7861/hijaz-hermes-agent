@@ -1,0 +1,9 @@
+[project]
+name = "hijaz-hermes-free-router"
+version = "0.1.0"
+description = "Strict free-only OpenRouter failover adapter for HIJAZ Hermes"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"
