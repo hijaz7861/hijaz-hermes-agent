@@ -341,7 +341,7 @@ The `feat/free-only-openrouter-runtime` branch introduces an isolated Python ada
 - Never adds a paid model as a fallback.
 - Includes unit tests for free-model filtering, rate-limit failover, and fail-closed behavior.
 
-This is **not yet integrated into the Hermes runtime**. It requires an OpenRouter API key even for free model access, and availability/quotas remain subject to provider policy. See [the adapter implementation notes](docs/free-only-openrouter-adapter.md) and the [upstream runtime integration map](docs/upstream-runtime-integration.md).
+This is **not yet integrated into the Hermes runtime**. It requires an OpenRouter API key even for free model access, and availability/quotas remain subject to provider policy. See [the adapter implementation notes](docs/free-only-openrouter-adapter.md), the [upstream runtime integration map](docs/upstream-runtime-integration.md), and the [per-user GitHub identity and attribution policy](docs/user-identity-and-attribution.md).
 
 Run its tests with:
 
